@@ -23,6 +23,13 @@
 		D0AFEF861BCFB6EB0073D477 /* TAMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0AFEF821BCFB6EB0073D477 /* TAMainViewController.xib */; };
 		D0AFEF8B1BCFB79D0073D477 /* TASceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AFEF891BCFB79D0073D477 /* TASceneViewController.m */; };
 		D0AFEF8C1BCFB79D0073D477 /* TASceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0AFEF8A1BCFB79D0073D477 /* TASceneViewController.xib */; };
+		D0AFEF901BCFB8FE0073D477 /* TATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AFEF8E1BCFB8FE0073D477 /* TATableViewCell.m */; };
+		D0AFEF911BCFB8FE0073D477 /* TATableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0AFEF8F1BCFB8FE0073D477 /* TATableViewCell.xib */; };
+		D0AFEF951BCFBA580073D477 /* TAGLKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AFEF931BCFBA580073D477 /* TAGLKViewController.m */; };
+		D0AFEF961BCFBA580073D477 /* TAGLKViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0AFEF941BCFBA580073D477 /* TAGLKViewController.xib */; };
+		D0AFEF991BCFBB210073D477 /* TAGLKView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AFEF981BCFBB210073D477 /* TAGLKView.m */; };
+		D0AFEF9C1BCFBB800073D477 /* TASquareObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AFEF9B1BCFBB800073D477 /* TASquareObject.m */; };
+		D0AFEF9F1BCFBBC40073D477 /* TASphereObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AFEF9E1BCFBBC40073D477 /* TASphereObject.m */; };
 		F252930CFABB832773CEEBDD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B965773F0FF28E8872C89649 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +74,18 @@
 		D0AFEF881BCFB79D0073D477 /* TASceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TASceneViewController.h; sourceTree = "<group>"; };
 		D0AFEF891BCFB79D0073D477 /* TASceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TASceneViewController.m; sourceTree = "<group>"; };
 		D0AFEF8A1BCFB79D0073D477 /* TASceneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TASceneViewController.xib; sourceTree = "<group>"; };
+		D0AFEF8D1BCFB8FE0073D477 /* TATableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATableViewCell.h; sourceTree = "<group>"; };
+		D0AFEF8E1BCFB8FE0073D477 /* TATableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATableViewCell.m; sourceTree = "<group>"; };
+		D0AFEF8F1BCFB8FE0073D477 /* TATableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TATableViewCell.xib; sourceTree = "<group>"; };
+		D0AFEF921BCFBA580073D477 /* TAGLKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGLKViewController.h; sourceTree = "<group>"; };
+		D0AFEF931BCFBA580073D477 /* TAGLKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGLKViewController.m; sourceTree = "<group>"; };
+		D0AFEF941BCFBA580073D477 /* TAGLKViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAGLKViewController.xib; sourceTree = "<group>"; };
+		D0AFEF971BCFBB210073D477 /* TAGLKView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGLKView.h; sourceTree = "<group>"; };
+		D0AFEF981BCFBB210073D477 /* TAGLKView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGLKView.m; sourceTree = "<group>"; };
+		D0AFEF9A1BCFBB800073D477 /* TASquareObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TASquareObject.h; sourceTree = "<group>"; };
+		D0AFEF9B1BCFBB800073D477 /* TASquareObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TASquareObject.m; sourceTree = "<group>"; };
+		D0AFEF9D1BCFBBC40073D477 /* TASphereObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TASphereObject.h; sourceTree = "<group>"; };
+		D0AFEF9E1BCFBBC40073D477 /* TASphereObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TASphereObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +190,15 @@
 		D0AFEF681BCFB4480073D477 /* GL */ = {
 			isa = PBXGroup;
 			children = (
+				D0AFEF921BCFBA580073D477 /* TAGLKViewController.h */,
+				D0AFEF931BCFBA580073D477 /* TAGLKViewController.m */,
+				D0AFEF941BCFBA580073D477 /* TAGLKViewController.xib */,
+				D0AFEF971BCFBB210073D477 /* TAGLKView.h */,
+				D0AFEF981BCFBB210073D477 /* TAGLKView.m */,
+				D0AFEF9A1BCFBB800073D477 /* TASquareObject.h */,
+				D0AFEF9B1BCFBB800073D477 /* TASquareObject.m */,
+				D0AFEF9D1BCFBBC40073D477 /* TASphereObject.h */,
+				D0AFEF9E1BCFBBC40073D477 /* TASphereObject.m */,
 			);
 			path = GL;
 			sourceTree = "<group>";
@@ -212,6 +240,9 @@
 				D0AFEF881BCFB79D0073D477 /* TASceneViewController.h */,
 				D0AFEF891BCFB79D0073D477 /* TASceneViewController.m */,
 				D0AFEF8A1BCFB79D0073D477 /* TASceneViewController.xib */,
+				D0AFEF8D1BCFB8FE0073D477 /* TATableViewCell.h */,
+				D0AFEF8E1BCFB8FE0073D477 /* TATableViewCell.m */,
+				D0AFEF8F1BCFB8FE0073D477 /* TATableViewCell.xib */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -308,7 +339,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0AFEF961BCFBA580073D477 /* TAGLKViewController.xib in Resources */,
 				D0AFEF8C1BCFB79D0073D477 /* TASceneViewController.xib in Resources */,
+				D0AFEF911BCFB8FE0073D477 /* TATableViewCell.xib in Resources */,
 				D0AFEF141BCFB0360073D477 /* Images.xcassets in Resources */,
 				D0AFEF861BCFB6EB0073D477 /* TAMainViewController.xib in Resources */,
 				D0AFEF841BCFB6EB0073D477 /* TALoginViewController.xib in Resources */,
@@ -362,10 +395,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0AFEF991BCFBB210073D477 /* TAGLKView.m in Sources */,
 				D0AFEF8B1BCFB79D0073D477 /* TASceneViewController.m in Sources */,
 				D0AFEF0C1BCFB0360073D477 /* AppDelegate.m in Sources */,
+				D0AFEF951BCFBA580073D477 /* TAGLKViewController.m in Sources */,
 				D0AFEF091BCFB0360073D477 /* main.m in Sources */,
 				D0AFEF851BCFB6EB0073D477 /* TAMainViewController.m in Sources */,
+				D0AFEF9F1BCFBBC40073D477 /* TASphereObject.m in Sources */,
+				D0AFEF901BCFB8FE0073D477 /* TATableViewCell.m in Sources */,
+				D0AFEF9C1BCFBB800073D477 /* TASquareObject.m in Sources */,
 				D0AFEF6F1BCFB4BA0073D477 /* TANetworkAPI.m in Sources */,
 				D0AFEF831BCFB6EB0073D477 /* TALoginViewController.m in Sources */,
 				D0AFEF6C1BCFB4610073D477 /* TAMotion.m in Sources */,

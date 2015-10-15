@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>90530A0E-58D4-4452-90FD-98B1C1139257</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ToppanoApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1C2DA0C3261A7C394E4A4B1BF8B8DE0BDFC01584</key>
+		<string>https://github.com/papayabird/ToppanoApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ToppanoApp.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1C2DA0C3261A7C394E4A4B1BF8B8DE0BDFC01584</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/papayabird/ToppanoApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1C2DA0C3261A7C394E4A4B1BF8B8DE0BDFC01584</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1C2DA0C3261A7C394E4A4B1BF8B8DE0BDFC01584</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ToppanoApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>

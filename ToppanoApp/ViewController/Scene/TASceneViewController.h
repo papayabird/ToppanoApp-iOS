@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TATableViewCell.h"
+#import "TAGLKViewController.h"
 
-@interface TASceneViewController : UIViewController
+@interface TASceneViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,TAGLViewProtocol>
+
+@property (strong, nonatomic) NSString *spaceIndex;
 
 @end
