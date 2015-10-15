@@ -30,6 +30,8 @@
 		D0AFEF991BCFBB210073D477 /* TAGLKView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AFEF981BCFBB210073D477 /* TAGLKView.m */; };
 		D0AFEF9C1BCFBB800073D477 /* TASquareObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AFEF9B1BCFBB800073D477 /* TASquareObject.m */; };
 		D0AFEF9F1BCFBBC40073D477 /* TASphereObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AFEF9E1BCFBBC40073D477 /* TASphereObject.m */; };
+		D0AFEFA11BCFBCE10073D477 /* VertexShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D0AFEFA01BCFBCE10073D477 /* VertexShader.vsh */; };
+		D0AFEFA31BCFBCF20073D477 /* FragmentShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D0AFEFA21BCFBCF20073D477 /* FragmentShader.fsh */; };
 		F252930CFABB832773CEEBDD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B965773F0FF28E8872C89649 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +88,8 @@
 		D0AFEF9B1BCFBB800073D477 /* TASquareObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TASquareObject.m; sourceTree = "<group>"; };
 		D0AFEF9D1BCFBBC40073D477 /* TASphereObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TASphereObject.h; sourceTree = "<group>"; };
 		D0AFEF9E1BCFBBC40073D477 /* TASphereObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TASphereObject.m; sourceTree = "<group>"; };
+		D0AFEFA01BCFBCE10073D477 /* VertexShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = VertexShader.vsh; sourceTree = "<group>"; };
+		D0AFEFA21BCFBCF20073D477 /* FragmentShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = FragmentShader.fsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +203,8 @@
 				D0AFEF9B1BCFBB800073D477 /* TASquareObject.m */,
 				D0AFEF9D1BCFBBC40073D477 /* TASphereObject.h */,
 				D0AFEF9E1BCFBBC40073D477 /* TASphereObject.m */,
+				D0AFEFA01BCFBCE10073D477 /* VertexShader.vsh */,
+				D0AFEFA21BCFBCF20073D477 /* FragmentShader.fsh */,
 			);
 			path = GL;
 			sourceTree = "<group>";
@@ -342,6 +348,8 @@
 				D0AFEF961BCFBA580073D477 /* TAGLKViewController.xib in Resources */,
 				D0AFEF8C1BCFB79D0073D477 /* TASceneViewController.xib in Resources */,
 				D0AFEF911BCFB8FE0073D477 /* TATableViewCell.xib in Resources */,
+				D0AFEFA11BCFBCE10073D477 /* VertexShader.vsh in Resources */,
+				D0AFEFA31BCFBCF20073D477 /* FragmentShader.fsh in Resources */,
 				D0AFEF141BCFB0360073D477 /* Images.xcassets in Resources */,
 				D0AFEF861BCFB6EB0073D477 /* TAMainViewController.xib in Resources */,
 				D0AFEF841BCFB6EB0073D477 /* TALoginViewController.xib in Resources */,
