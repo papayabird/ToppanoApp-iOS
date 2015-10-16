@@ -1,4 +1,5 @@
 # ToppanoApp
 ToppanoApp
 
-haha just an pano app ~
+haha just a pano app ~ ^.<
+
