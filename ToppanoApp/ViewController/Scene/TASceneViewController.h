@@ -10,7 +10,7 @@
 #import "TATableViewCell.h"
 #import "TAGLKViewController.h"
 
-@interface TASceneViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,TAGLViewProtocol>
+@interface TASceneViewController : TABasicViewController <UITableViewDataSource, UITableViewDelegate,TAGLViewProtocol>
 
 @property (strong, nonatomic) NSString *spaceIndex;
 

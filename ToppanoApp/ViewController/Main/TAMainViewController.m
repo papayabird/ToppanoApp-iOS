@@ -38,6 +38,10 @@
 
 - (IBAction)logoutAction:(id)sender
 {
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    
+    [login logOut];
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 

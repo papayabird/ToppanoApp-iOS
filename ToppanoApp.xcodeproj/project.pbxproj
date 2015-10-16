@@ -49,6 +49,8 @@
 		D0B914E01BD0D18F001EE612 /* TAMainCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B914DE1BD0D18F001EE612 /* TAMainCollectionViewCell.m */; };
 		D0B914E11BD0D18F001EE612 /* TAMainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0B914DF1BD0D18F001EE612 /* TAMainCollectionViewCell.xib */; };
 		D0B914E31BD0DD8F001EE612 /* IMG_2863.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D0B914E21BD0DD8F001EE612 /* IMG_2863.JPG */; };
+		D0B914E71BD0F2C1001EE612 /* TABasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B914E51BD0F2C1001EE612 /* TABasicViewController.m */; };
+		D0B914E81BD0F2C1001EE612 /* TABasicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0B914E61BD0F2C1001EE612 /* TABasicViewController.xib */; };
 		F252930CFABB832773CEEBDD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B965773F0FF28E8872C89649 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -125,6 +127,9 @@
 		D0B914DE1BD0D18F001EE612 /* TAMainCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMainCollectionViewCell.m; path = ToppanoApp/ViewController/Main/TAMainCollectionViewCell.m; sourceTree = SOURCE_ROOT; };
 		D0B914DF1BD0D18F001EE612 /* TAMainCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TAMainCollectionViewCell.xib; path = ToppanoApp/ViewController/Main/TAMainCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		D0B914E21BD0DD8F001EE612 /* IMG_2863.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_2863.JPG; sourceTree = "<group>"; };
+		D0B914E41BD0F2C1001EE612 /* TABasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABasicViewController.h; sourceTree = "<group>"; };
+		D0B914E51BD0F2C1001EE612 /* TABasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABasicViewController.m; sourceTree = "<group>"; };
+		D0B914E61BD0F2C1001EE612 /* TABasicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TABasicViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +275,9 @@
 		D0AFEF691BCFB4480073D477 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D0B914E41BD0F2C1001EE612 /* TABasicViewController.h */,
+				D0B914E51BD0F2C1001EE612 /* TABasicViewController.m */,
+				D0B914E61BD0F2C1001EE612 /* TABasicViewController.xib */,
 				D0AFEF7B1BCFB6EB0073D477 /* Login */,
 				D0AFEF7F1BCFB6EB0073D477 /* Main */,
 				D0AFEF871BCFB7750073D477 /* Scene */,
@@ -415,6 +423,7 @@
 				D013182D1BD098A700EF6246 /* 0.JPG in Resources */,
 				D01318321BD098A700EF6246 /* 3_s.JPG in Resources */,
 				D01318331BD098A700EF6246 /* 3.JPG in Resources */,
+				D0B914E81BD0F2C1001EE612 /* TABasicViewController.xib in Resources */,
 				D01318301BD098A700EF6246 /* 2_s.JPG in Resources */,
 				D013183B1BD09C2400EF6246 /* TATableViewCell.xib in Resources */,
 				D01318371BD098A700EF6246 /* 5.JPG in Resources */,
@@ -486,6 +495,7 @@
 				D0AFEF951BCFBA580073D477 /* TAGLKViewController.m in Sources */,
 				D0AFEF091BCFB0360073D477 /* main.m in Sources */,
 				D0AFEF851BCFB6EB0073D477 /* TAMainViewController.m in Sources */,
+				D0B914E71BD0F2C1001EE612 /* TABasicViewController.m in Sources */,
 				D0AFEF9F1BCFBBC40073D477 /* TASphereObject.m in Sources */,
 				D0AFEF901BCFB8FE0073D477 /* TATableViewCell.m in Sources */,
 				D0AFEF9C1BCFBB800073D477 /* TASquareObject.m in Sources */,

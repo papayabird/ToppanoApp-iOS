@@ -29,6 +29,7 @@
 
 //Class
 #import "AppDelegate.h"
+#import "TABasicViewController.h"
 #import "TANetworkAPI.h"
 
 //Notification String

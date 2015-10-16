@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TAMainViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface TAMainViewController : TABasicViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @end

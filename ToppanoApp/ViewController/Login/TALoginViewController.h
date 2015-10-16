@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TALoginViewController : UIViewController
+@interface TALoginViewController : TABasicViewController
 
 @end
