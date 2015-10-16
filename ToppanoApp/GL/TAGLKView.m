@@ -501,7 +501,6 @@ calculVertex TriangleVertice2[] =
 {
     //計算範圍內點擊
     
-    BOOL isRectangle1Range = NO,isRectangle2Range = NO;
     double x,x1,x2,x3,y,y1,y2,y3,ans1,ans2,ans3;
     
     x = tapPoint.x;
@@ -535,14 +534,12 @@ calculVertex TriangleVertice2[] =
         
         if (i == 0) {
             if (ans3 >= 0 && ans3 <= 1 && ans2 >= 0 && ans2 <= 1 && ans1 >= 0 && ans1 <= 1) {
-                isRectangle1Range = YES;
                 NSLog(@"ans1 = %f,ans2 = %f,ans3 = %f",ans1,ans2,ans3);
                 return YES;
             }
         }
         else {
             if (ans3 >= 0 && ans3 <= 1 && ans2 >= 0 && ans2 <= 1 && ans1 >= 0 && ans1 <= 1) {
-                isRectangle2Range = YES;
                 NSLog(@"ans1 = %f,ans2 = %f,ans3 = %f",ans1,ans2,ans3);
                 return YES;
             }
