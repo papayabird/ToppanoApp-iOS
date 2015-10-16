@@ -33,7 +33,7 @@
     TALoginViewController *mainVC = [[TALoginViewController alloc] init];
 
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
-    
+    nav.navigationBar.hidden = YES;
     [self.window setRootViewController:nav];
     [self.window makeKeyAndVisible];
     

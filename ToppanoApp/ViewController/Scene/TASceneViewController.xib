@@ -1,19 +1,78 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TASceneViewController">
             <connections>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="contentView" destination="Yr0-ZE-TFU" id="Q40-cV-fR6"/>
+                <outlet property="editButton" destination="YYT-cf-UEB" id="zjz-1K-n1g"/>
+                <outlet property="tableView" destination="0px-Qf-lI3" id="cg7-dZ-WGa"/>
+                <outlet property="toolView" destination="TcF-zx-5kt" id="dw2-xV-Q8h"/>
+                <outlet property="view" destination="xtQ-ey-srS" id="BX1-zH-vZy"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+        <view contentMode="scaleToFill" id="xtQ-ey-srS">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0px-Qf-lI3">
+                    <rect key="frame" x="0.0" y="20" width="319" height="748"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="319" id="WG1-2D-jeH"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Vtf-s0-Bel"/>
+                        <outlet property="delegate" destination="-1" id="Vje-q7-57D"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yr0-ZE-TFU">
+                    <rect key="frame" x="319" y="20" width="705" height="748"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Yr0-ZE-TFU" firstAttribute="top" secondItem="xtQ-ey-srS" secondAttribute="top" constant="20" id="4e2-Ad-2bq"/>
+                <constraint firstAttribute="bottom" secondItem="Yr0-ZE-TFU" secondAttribute="bottom" id="AI5-nC-jwj"/>
+                <constraint firstAttribute="trailing" secondItem="Yr0-ZE-TFU" secondAttribute="trailing" id="IFs-Lk-AV3"/>
+                <constraint firstItem="0px-Qf-lI3" firstAttribute="leading" secondItem="xtQ-ey-srS" secondAttribute="leading" id="Mn7-Sn-bjq"/>
+                <constraint firstAttribute="bottom" secondItem="0px-Qf-lI3" secondAttribute="bottom" id="SMN-FT-hhQ"/>
+                <constraint firstItem="0px-Qf-lI3" firstAttribute="top" secondItem="xtQ-ey-srS" secondAttribute="top" constant="20" id="gh0-RY-eOc"/>
+                <constraint firstItem="Yr0-ZE-TFU" firstAttribute="leading" secondItem="0px-Qf-lI3" secondAttribute="trailing" id="qd0-zG-l1e"/>
+            </constraints>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+            <point key="canvasLocation" x="155" y="385"/>
+        </view>
+        <view contentMode="scaleToFill" id="TcF-zx-5kt">
+            <rect key="frame" x="0.0" y="0.0" width="328" height="56"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYT-cf-UEB">
+                    <rect key="frame" x="8" y="8" width="56" height="40"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Idy-NZ-jg4"/>
+                        <constraint firstAttribute="width" constant="56" id="JNp-FS-YkT"/>
+                    </constraints>
+                    <state key="normal" title="Edit">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" title="Down"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="YYT-cf-UEB" firstAttribute="top" secondItem="TcF-zx-5kt" secondAttribute="top" constant="8" id="sAu-wJ-BT3"/>
+                <constraint firstItem="YYT-cf-UEB" firstAttribute="leading" secondItem="TcF-zx-5kt" secondAttribute="leading" constant="8" id="sdt-OU-lCS"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="39" y="-130"/>
         </view>
     </objects>
 </document>

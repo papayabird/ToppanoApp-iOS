@@ -60,13 +60,13 @@
 {
     [super viewDidAppear:animated];
     
-    
+    /*
     [self callAPIGetData:self.spaceIndex complete:^(BOOL isSuccess, NSError *err, id responseObject) {
         
         
         
     }];
-    
+    */
     
     
     [self showImage:dataArray[0] rotationAngleXZ:0 rotationAngleY:0];
