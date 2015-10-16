@@ -46,6 +46,8 @@
 		D0AFEF9F1BCFBBC40073D477 /* TASphereObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AFEF9E1BCFBBC40073D477 /* TASphereObject.m */; };
 		D0AFEFA11BCFBCE10073D477 /* VertexShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D0AFEFA01BCFBCE10073D477 /* VertexShader.vsh */; };
 		D0AFEFA31BCFBCF20073D477 /* FragmentShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D0AFEFA21BCFBCF20073D477 /* FragmentShader.fsh */; };
+		D0B914E01BD0D18F001EE612 /* TAMainCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B914DE1BD0D18F001EE612 /* TAMainCollectionViewCell.m */; };
+		D0B914E11BD0D18F001EE612 /* TAMainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0B914DF1BD0D18F001EE612 /* TAMainCollectionViewCell.xib */; };
 		F252930CFABB832773CEEBDD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B965773F0FF28E8872C89649 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +120,9 @@
 		D0AFEF9E1BCFBBC40073D477 /* TASphereObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TASphereObject.m; sourceTree = "<group>"; };
 		D0AFEFA01BCFBCE10073D477 /* VertexShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = VertexShader.vsh; sourceTree = "<group>"; };
 		D0AFEFA21BCFBCF20073D477 /* FragmentShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = FragmentShader.fsh; sourceTree = "<group>"; };
+		D0B914DD1BD0D18F001EE612 /* TAMainCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TAMainCollectionViewCell.h; path = ToppanoApp/ViewController/Main/TAMainCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
+		D0B914DE1BD0D18F001EE612 /* TAMainCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TAMainCollectionViewCell.m; path = ToppanoApp/ViewController/Main/TAMainCollectionViewCell.m; sourceTree = SOURCE_ROOT; };
+		D0B914DF1BD0D18F001EE612 /* TAMainCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TAMainCollectionViewCell.xib; path = ToppanoApp/ViewController/Main/TAMainCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +290,9 @@
 				D0AFEF801BCFB6EB0073D477 /* TAMainViewController.h */,
 				D0AFEF811BCFB6EB0073D477 /* TAMainViewController.m */,
 				D0AFEF821BCFB6EB0073D477 /* TAMainViewController.xib */,
+				D0B914DD1BD0D18F001EE612 /* TAMainCollectionViewCell.h */,
+				D0B914DE1BD0D18F001EE612 /* TAMainCollectionViewCell.m */,
+				D0B914DF1BD0D18F001EE612 /* TAMainCollectionViewCell.xib */,
 			);
 			name = Main;
 			path = main;
@@ -395,6 +403,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B914E11BD0D18F001EE612 /* TAMainCollectionViewCell.xib in Resources */,
 				D013182C1BD098A700EF6246 /* 0_s.JPG in Resources */,
 				D0AFEF961BCFBA580073D477 /* TAGLKViewController.xib in Resources */,
 				D0AFEF8C1BCFB79D0073D477 /* TASceneViewController.xib in Resources */,
@@ -477,6 +486,7 @@
 				D0AFEF901BCFB8FE0073D477 /* TATableViewCell.m in Sources */,
 				D0AFEF9C1BCFBB800073D477 /* TASquareObject.m in Sources */,
 				D0AFEF6F1BCFB4BA0073D477 /* TANetworkAPI.m in Sources */,
+				D0B914E01BD0D18F001EE612 /* TAMainCollectionViewCell.m in Sources */,
 				D0AFEF831BCFB6EB0073D477 /* TALoginViewController.m in Sources */,
 				D0AFEF6C1BCFB4610073D477 /* TAMotion.m in Sources */,
 			);

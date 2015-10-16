@@ -8,14 +8,19 @@
 
 #import "TAMainViewController.h"
 #import "TASceneViewController.h"
+#import "TAMainCollectionViewCell.h"
 @interface TAMainViewController ()
 
+@property (weak, nonatomic) IBOutlet UICollectionView *mainCollectionView;
 @end
 
 @implementation TAMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UINib *aNibNotification = [UINib nibWithNibName:@"TAMainCollectionViewCell" bundle:nil];
+    [self.mainCollectionView registerNib:aNibNotification forCellWithReuseIdentifier:@"TAMainCollectionViewCell"];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -28,19 +33,33 @@
 {
     [super viewDidAppear:animated];
     
-    TASceneViewController *sceneVC = [[TASceneViewController alloc] init];
+//    TASceneViewController *sceneVC = [[TASceneViewController alloc] init];
+//    
+//    [self.navigationController pushViewController:sceneVC animated:YES];
+}
+
+#pragma mark - UICollectionVIew Delegate % Datasource
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(320, 320);
+}
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 20;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+     TAMainCollectionViewCell *cell = (TAMainCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"TAMainCollectionViewCell" forIndexPath:indexPath];
     
-    [self.navigationController pushViewController:sceneVC animated:YES];
+    return cell;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
 }
-*/
 
 @end

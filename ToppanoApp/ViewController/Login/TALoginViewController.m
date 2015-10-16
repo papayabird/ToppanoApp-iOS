@@ -29,13 +29,31 @@
 {
     [super viewDidAppear:animated];
     
-
-    
+    /*
+    if ([FBSDKAccessToken currentAccessToken]){
+        //還在登入中,直接fetch再拿mail給server
+        [self fetchUserInfo];
+    }
+    else {
+        //要做登入,按鈕要顯示
+    }
+     */
 }
 
 #pragma mark - Button Action
 
 - (IBAction)FBloginAction:(id)sender
+{
+    TAMainViewController *mainVC = [[TAMainViewController alloc] init];
+    [self.navigationController pushViewController:mainVC animated:YES];
+    /*
+    [self loginFB];
+     */
+}
+
+#pragma mark - FB Methods
+
+- (void)loginFB
 {
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
     [login
@@ -63,6 +81,8 @@
              if (!error)
              {
                  NSLog(@"resultis:%@",result);
+                 //拿mail
+                 
              }
              else
              {
@@ -71,18 +91,9 @@
          }];
         
     }
-    
+    else {
+        
+    }
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
