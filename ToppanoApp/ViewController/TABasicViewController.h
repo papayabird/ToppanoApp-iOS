@@ -10,4 +10,9 @@
 
 @interface TABasicViewController : UIViewController
 
+@property (strong, nonatomic) UIView *titleView;
+@property (strong, nonatomic) UILabel *titleLabel;
+
+- (void)setTitleText:(NSString *)titleString;
+
 @end

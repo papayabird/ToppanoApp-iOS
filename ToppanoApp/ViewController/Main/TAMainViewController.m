@@ -22,6 +22,9 @@
     UINib *aNibNotification = [UINib nibWithNibName:@"TAMainCollectionViewCell" bundle:nil];
     [self.mainCollectionView registerNib:aNibNotification forCellWithReuseIdentifier:@"TAMainCollectionViewCell"];
     // Do any additional setup after loading the view from its nib.
+    
+//    [self setTitleText:@"SPACE LIST"];
+
 }
 
 - (void)didReceiveMemoryWarning {

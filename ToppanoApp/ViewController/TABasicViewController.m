@@ -17,6 +17,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+//    [self createTitleView];
+}
+
+- (void)createTitleView
+{
+    self.titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1024, 70)];
+    self.titleView.backgroundColor = [UIColor colorWithRed:73/255.0f green:73/255.0f blue:73/255.0f alpha:1];
+    [self.view addSubview:self.titleView];
+    
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake((1024/2) - (300/2), 20, 300, 50)];
+    [self.titleView addSubview:self.titleLabel];
+    self.titleLabel.textColor = [UIColor whiteColor];
+    self.titleLabel.font = [UIFont boldSystemFontOfSize:35];
+    self.titleLabel.textAlignment = 1;
+}
+
+- (void)setTitleText:(NSString *)titleString
+{
+    self.titleLabel.text = titleString;
 }
 
 - (void)didReceiveMemoryWarning {

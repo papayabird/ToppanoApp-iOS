@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+//    [self setTitleText:@"TOPPANO"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,6 +30,7 @@
 {
     [super viewDidAppear:animated];
     
+
     /*
     if ([FBSDKAccessToken currentAccessToken]){
         //還在登入中,直接fetch再拿mail給server
