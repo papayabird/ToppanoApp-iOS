@@ -32,10 +32,13 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-//    TASceneViewController *sceneVC = [[TASceneViewController alloc] init];
-//    
-//    [self.navigationController pushViewController:sceneVC animated:YES];
+}
+
+#pragma mark - Button Action
+
+- (IBAction)logoutAction:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - UICollectionVIew Delegate % Datasource
@@ -59,7 +62,9 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    TASceneViewController *sceneVC = [[TASceneViewController alloc] init];
     
+    [self.navigationController pushViewController:sceneVC animated:YES];
 }
 
 @end

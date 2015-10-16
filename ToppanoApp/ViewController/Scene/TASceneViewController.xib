@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
@@ -19,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0px-Qf-lI3">
-                    <rect key="frame" x="0.0" y="20" width="319" height="748"/>
+                    <rect key="frame" x="0.0" y="70" width="319" height="748"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="319" id="WG1-2D-jeH"/>
@@ -30,23 +31,45 @@
                     </connections>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yr0-ZE-TFU">
-                    <rect key="frame" x="319" y="20" width="705" height="748"/>
+                    <rect key="frame" x="319" y="70" width="705" height="748"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r8o-To-tFV">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="70"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scene" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9x-ll-sff">
+                            <rect key="frame" x="400" y="16" width="225" height="39"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmI-jN-WPy">
+                            <rect key="frame" x="8" y="0.0" width="70" height="70"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <state key="normal" title="Back">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="popAction:" destination="-1" eventType="touchUpInside" id="CUw-RU-gqZ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.28787878789999999" green="0.28787878789999999" blue="0.28787878789999999" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
-            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Yr0-ZE-TFU" firstAttribute="top" secondItem="xtQ-ey-srS" secondAttribute="top" constant="20" id="4e2-Ad-2bq"/>
-                <constraint firstAttribute="bottom" secondItem="Yr0-ZE-TFU" secondAttribute="bottom" id="AI5-nC-jwj"/>
+                <constraint firstItem="Yr0-ZE-TFU" firstAttribute="top" secondItem="xtQ-ey-srS" secondAttribute="top" constant="70" id="4e2-Ad-2bq"/>
+                <constraint firstAttribute="bottom" secondItem="Yr0-ZE-TFU" secondAttribute="bottom" constant="-50" id="AI5-nC-jwj"/>
                 <constraint firstAttribute="trailing" secondItem="Yr0-ZE-TFU" secondAttribute="trailing" id="IFs-Lk-AV3"/>
                 <constraint firstItem="0px-Qf-lI3" firstAttribute="leading" secondItem="xtQ-ey-srS" secondAttribute="leading" id="Mn7-Sn-bjq"/>
-                <constraint firstAttribute="bottom" secondItem="0px-Qf-lI3" secondAttribute="bottom" id="SMN-FT-hhQ"/>
-                <constraint firstItem="0px-Qf-lI3" firstAttribute="top" secondItem="xtQ-ey-srS" secondAttribute="top" constant="20" id="gh0-RY-eOc"/>
+                <constraint firstAttribute="bottom" secondItem="0px-Qf-lI3" secondAttribute="bottom" constant="-50" id="SMN-FT-hhQ"/>
+                <constraint firstItem="0px-Qf-lI3" firstAttribute="top" secondItem="xtQ-ey-srS" secondAttribute="top" constant="70" id="gh0-RY-eOc"/>
                 <constraint firstItem="Yr0-ZE-TFU" firstAttribute="leading" secondItem="0px-Qf-lI3" secondAttribute="trailing" id="qd0-zG-l1e"/>
             </constraints>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
-            <point key="canvasLocation" x="155" y="385"/>
+            <point key="canvasLocation" x="-4" y="370"/>
         </view>
         <view contentMode="scaleToFill" id="TcF-zx-5kt">
             <rect key="frame" x="0.0" y="0.0" width="328" height="56"/>
@@ -64,6 +87,9 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <state key="selected" title="Down"/>
+                    <connections>
+                        <action selector="editAction:" destination="-1" eventType="touchUpInside" id="zbY-It-L5m"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

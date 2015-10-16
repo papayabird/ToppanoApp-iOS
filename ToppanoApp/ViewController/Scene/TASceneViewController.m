@@ -192,6 +192,10 @@
     
 }
 
+- (IBAction)popAction:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 #pragma mark - NetworkAPI
 - (void)callAPIGetData:(NSString *)pageIndex complete:(OTRequestFinishBlock)completeBlock
 {
