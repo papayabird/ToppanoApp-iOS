@@ -10,6 +10,7 @@
 #import "TAMainViewController.h"
 @interface TALoginViewController ()
 
+
 @end
 
 @implementation TALoginViewController
@@ -28,10 +29,51 @@
 {
     [super viewDidAppear:animated];
     
-    TAMainViewController *mainVC = [[TAMainViewController alloc] init];
+
     
-    [self.navigationController pushViewController:mainVC animated:YES];
 }
+
+#pragma mark - Button Action
+
+- (IBAction)FBloginAction:(id)sender
+{
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login
+     logInWithReadPermissions: @[@"public_profile"]
+     handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+         if (error) {
+             NSLog(@"Process error");
+         } else if (result.isCancelled) {
+             NSLog(@"Cancelled");
+         } else {
+             NSLog(@"Logged in");
+             [self fetchUserInfo];
+         }
+     }];
+}
+
+-(void)fetchUserInfo
+{
+    if ([FBSDKAccessToken currentAccessToken])
+    {
+        NSLog(@"Token is available : %@",[[FBSDKAccessToken currentAccessToken]tokenString]);
+        
+        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name, link, first_name, last_name, picture.type(large), email, birthday, bio ,location ,friends ,hometown , friendlists"}]
+         startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+             if (!error)
+             {
+                 NSLog(@"resultis:%@",result);
+             }
+             else
+             {
+                 NSLog(@"Error %@",error);
+             }
+         }];
+        
+    }
+    
+}
+
 
 /*
 #pragma mark - Navigation

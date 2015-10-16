@@ -22,7 +22,8 @@
 //CocoaPod
 #import <MBProgressHUD.h>
 #import <AFNetworking.h>
-
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 //Define
 
 

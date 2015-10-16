@@ -37,12 +37,15 @@ PODS:
     - FBSDKCoreKit/arc
   - FBSDKLoginKit (4.1.0):
     - FBSDKCoreKit
+  - FBSDKShareKit (4.1.0):
+    - FBSDKCoreKit
   - MBProgressHUD (0.9.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - FBSDKCoreKit (~> 4.1.0)
   - FBSDKLoginKit (~> 4.1.0)
+  - FBSDKShareKit (~> 4.1.0)
   - MBProgressHUD
 
 SPEC CHECKSUMS:
@@ -50,6 +53,7 @@ SPEC CHECKSUMS:
   Bolts: 805a4a87413e49d4a0c2b7d469084cbc46b09342
   FBSDKCoreKit: 469ed167195f860dbd2b4c4bbaa33d2e90598db9
   FBSDKLoginKit: ff6224762732e3698f30942e4544321b8c7a23e6
+  FBSDKShareKit: 8002faf0c564ff3625eadd16e506b0b0fbf3adef
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
 
 COCOAPODS: 0.36.0
