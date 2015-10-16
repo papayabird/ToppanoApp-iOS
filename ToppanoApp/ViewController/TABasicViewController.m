@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-//    [self createTitleView];
+    [self createTitleView];
 }
 
 - (void)createTitleView
@@ -32,6 +32,8 @@
     self.titleLabel.textColor = [UIColor whiteColor];
     self.titleLabel.font = [UIFont boldSystemFontOfSize:35];
     self.titleLabel.textAlignment = 1;
+    
+    [self.view sendSubviewToBack:self.titleView];
 }
 
 - (void)setTitleText:(NSString *)titleString

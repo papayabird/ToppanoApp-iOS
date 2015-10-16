@@ -23,7 +23,7 @@
     [self.mainCollectionView registerNib:aNibNotification forCellWithReuseIdentifier:@"TAMainCollectionViewCell"];
     // Do any additional setup after loading the view from its nib.
     
-//    [self setTitleText:@"SPACE LIST"];
+    [self setTitleText:@"SPACE LIST"];
 
 }
 
