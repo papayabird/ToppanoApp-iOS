@@ -112,11 +112,15 @@
     [dict0 setObject:@"0_s.JPG" forKey:@"sphotoName"];
     [dict0 setObject:@[
                        @{
-                           @"buttonPostion":@{@"lat":@"-17",@"long":@"-60"},
-                           @"buttonRotation":@{@"rotationX":@"95",@"rotationY":@"100",@"rotationZ":@"0"},
-                           @"pressToImageIndex":@"1"
+                           @"lat": @"-17",
+                           @"lng": @"-60",
+                           @"size": @"22",
+                           @"rotateX": @"95",
+                           @"rotateY": @"100",
+                           @"rotateZ": @"0",
+                           @"nextID": @"00000001"
                            },
-                       ] forKey:@"buttonArray"];
+                       ] forKey:@"transition"];
     
     [self.dataArray addObject:dict0];
     

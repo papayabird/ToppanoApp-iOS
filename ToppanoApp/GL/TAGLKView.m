@@ -227,9 +227,9 @@ typedef enum : int {
 - (void)settingSquareObject
 {
     
-    for (NSDictionary *dict in dataDictionary[@"buttonArray"]) {
+    for (NSDictionary *dict in dataDictionary[@"transition"]) {
         
-        TASquareObject *square = [[TASquareObject alloc] initSize:20 radius:90 transformPage:[dict[@"pressToImageIndex"] intValue] transfromTheta:[dict[@"buttonPostion"][@"long"] floatValue] transfromPhi:[dict[@"buttonPostion"][@"lat"] floatValue] rotationX:[dict[@"buttonRotation"][@"rotationX"] floatValue] rotationY:[dict[@"buttonRotation"][@"rotationY"] floatValue] rotationZ:[dict[@"buttonRotation"][@"rotationZ"] floatValue]];
+        TASquareObject *square = [[TASquareObject alloc] initSize:[dict[@"size"] floatValue] radius:90 transformPage:[dict[@"nextID"] intValue] transfromTheta:[dict[@"lng"] floatValue] transfromPhi:[dict[@"lat"] floatValue] rotationX:[dict[@"rotateX"] floatValue] rotationY:[dict[@"rotateY"] floatValue] rotationZ:[dict[@"rotateZ"] floatValue]];
         
         square.textureInfo = mTextureInfo2;
         square.textureMode = 1;
