@@ -18,6 +18,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    }
+    
     [self createTitleView];
 }
 
