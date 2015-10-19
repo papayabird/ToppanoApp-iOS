@@ -57,7 +57,7 @@
             </constraints>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
-            <point key="canvasLocation" x="-4" y="370"/>
+            <point key="canvasLocation" x="2" y="357"/>
         </view>
         <view contentMode="scaleToFill" id="TcF-zx-5kt">
             <rect key="frame" x="0.0" y="0.0" width="328" height="56"/>

@@ -166,7 +166,7 @@ typedef enum : int {
             shell = [[TASphereObject alloc] init:SHELL_RADIUS divide:SHELL_DIVIDE];
         }
         
-        DxLog(@"initwithframe frame: x: %f y: %f width %f height %f", frame.origin.x, frame.origin.y, frame.size.width, frame.size.height)
+        DxLog(@"initwithframe frame: x: %f y: %f width %f height %f", frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
     }
     
     return self;
