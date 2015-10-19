@@ -10,4 +10,8 @@
 
 @interface TAMainCollectionViewCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *spaceImageView;
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
 @end

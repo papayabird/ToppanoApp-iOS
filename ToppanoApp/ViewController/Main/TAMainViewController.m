@@ -64,6 +64,10 @@
 {
      TAMainCollectionViewCell *cell = (TAMainCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"TAMainCollectionViewCell" forIndexPath:indexPath];
     
+    int imageIndex = indexPath.row % 5;
+    
+    cell.spaceImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%i.JPG",imageIndex]];
+    
     return cell;
 }
 
