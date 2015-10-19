@@ -22,6 +22,7 @@
 		D01318381BD098A700EF6246 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D013182A1BD098A700EF6246 /* arrow.png */; };
 		D01318391BD098A700EF6246 /* arrow1.png in Resources */ = {isa = PBXBuildFile; fileRef = D013182B1BD098A700EF6246 /* arrow1.png */; };
 		D013183B1BD09C2400EF6246 /* TATableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D013183A1BD09C2400EF6246 /* TATableViewCell.xib */; };
+		D0652DFE1BD4DC4A0069B588 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0652DFD1BD4DC4A0069B588 /* Launch Screen.xib */; };
 		D0AFEF091BCFB0360073D477 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AFEF081BCFB0360073D477 /* main.m */; };
 		D0AFEF0C1BCFB0360073D477 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AFEF0B1BCFB0360073D477 /* AppDelegate.m */; };
 		D0AFEF141BCFB0360073D477 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0AFEF131BCFB0360073D477 /* Images.xcassets */; };
@@ -83,6 +84,7 @@
 		D013182A1BD098A700EF6246 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		D013182B1BD098A700EF6246 /* arrow1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow1.png; sourceTree = "<group>"; };
 		D013183A1BD09C2400EF6246 /* TATableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TATableViewCell.xib; sourceTree = "<group>"; };
+		D0652DFD1BD4DC4A0069B588 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "../Launch Screen.xib"; sourceTree = "<group>"; };
 		D0AFEF031BCFB0360073D477 /* ToppanoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToppanoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0AFEF071BCFB0360073D477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0AFEF081BCFB0360073D477 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				D0AFEF691BCFB4480073D477 /* ViewController */,
 				D0AFEF681BCFB4480073D477 /* GL */,
 				D0AFEF131BCFB0360073D477 /* Images.xcassets */,
+				D0652DFD1BD4DC4A0069B588 /* Launch Screen.xib */,
 				D0AFEF061BCFB0360073D477 /* Supporting Files */,
 			);
 			path = ToppanoApp;
@@ -423,6 +426,7 @@
 				D013182D1BD098A700EF6246 /* 0.JPG in Resources */,
 				D01318321BD098A700EF6246 /* 3_s.JPG in Resources */,
 				D01318331BD098A700EF6246 /* 3.JPG in Resources */,
+				D0652DFE1BD4DC4A0069B588 /* Launch Screen.xib in Resources */,
 				D0B914E81BD0F2C1001EE612 /* TABasicViewController.xib in Resources */,
 				D01318301BD098A700EF6246 /* 2_s.JPG in Resources */,
 				D013183B1BD09C2400EF6246 /* TATableViewCell.xib in Resources */,
@@ -610,7 +614,6 @@
 			baseConfigurationReference = 54E4E473F6C46DAB62FC9D50 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				GCC_PREFIX_HEADER = ToppanoApp/PrefixHeader.pch;
 				INFOPLIST_FILE = ToppanoApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -625,7 +628,6 @@
 			baseConfigurationReference = A4CA1A400CA8A53EB0629155 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				GCC_PREFIX_HEADER = ToppanoApp/PrefixHeader.pch;
 				INFOPLIST_FILE = ToppanoApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

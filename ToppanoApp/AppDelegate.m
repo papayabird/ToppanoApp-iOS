@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 
 #import "TALoginViewController.h"
-
+#import "TAMainViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -33,14 +33,31 @@
     [self returnMetadataPlistPath];
     [self returnPhotoFilePath];
     
-    TALoginViewController *mainVC = [[TALoginViewController alloc] init];
-
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
-    nav.navigationBar.hidden = YES;
-    [self.window setRootViewController:nav];
+    [self settingRootVC];
+    
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+- (void)settingRootVC
+{
+    if ([FBSDKAccessToken currentAccessToken]){
+        //還在登入中
+        TALoginViewController *loginVC = [[TALoginViewController alloc] init];
+        TAMainViewController *mainVC = [[TAMainViewController alloc] init];
+        UINavigationController *nav = [[UINavigationController alloc] init];
+        nav.viewControllers = @[loginVC, mainVC];
+        nav.navigationBar.hidden = YES;
+        [self.window setRootViewController:nav];
+    }
+    else {
+        //要登入
+        TALoginViewController *mainVC = [[TALoginViewController alloc] init];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
+        nav.navigationBar.hidden = YES;
+        [self.window setRootViewController:nav];
+    }
 }
 
 - (NSString *)returnMetadataPlistPath

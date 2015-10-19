@@ -29,28 +29,13 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-
-    /*
-    if ([FBSDKAccessToken currentAccessToken]){
-        //還在登入中,直接fetch再拿mail給server
-        [self fetchUserInfo];
-    }
-    else {
-        //要做登入,按鈕要顯示
-    }
-     */
 }
 
 #pragma mark - Button Action
 
 - (IBAction)FBloginAction:(id)sender
 {
-    TAMainViewController *mainVC = [[TAMainViewController alloc] init];
-    [self.navigationController pushViewController:mainVC animated:YES];
-    /*
     [self loginFB];
-     */
 }
 
 #pragma mark - FB Methods
@@ -83,8 +68,23 @@
              if (!error)
              {
                  NSLog(@"resultis:%@",result);
-                 //拿mail
+                 TAMainViewController *mainVC = [[TAMainViewController alloc] init];
+                 [self.navigationController pushViewController:mainVC animated:YES];
+
                  
+                 /*
+                 //拿result[@"mail"] call Rachard API
+                 [[TANetworkAPI sharedManager] loginWith:@"" password:@"" complete:^(BOOL isSuccess, NSError *err, id responseObject) {
+                     
+                     if (isSuccess) {
+                         TAMainViewController *mainVC = [[TAMainViewController alloc] init];
+                         [self.navigationController pushViewController:mainVC animated:YES];
+                     }
+                     else {
+                         
+                     }
+                 }];
+                  */
              }
              else
              {

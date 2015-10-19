@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^OTRequestFinishBlock)(BOOL isSuccess, NSError *err, id responseObject);
+typedef void (^TARequestFinishBlock)(BOOL isSuccess, NSError *err, id responseObject);
 
 @interface TANetworkAPI : NSObject
 
 +(instancetype)sharedManager;
-
-- (void)getPhotoMetadataAndImageWithIndex:(NSString *)index complete:(OTRequestFinishBlock)completeBlock;
+#pragma mark - 登入
+- (void)loginWith:(NSString *)account password:(NSString *)password complete:(TARequestFinishBlock)completeBlock;
+#pragma mark - 拿場景metadata & photos
+- (void)getPhotoMetadataAndImageWithIndex:(NSString *)index complete:(TARequestFinishBlock)completeBlock;
 
 @end

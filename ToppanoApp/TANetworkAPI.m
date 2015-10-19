@@ -20,7 +20,25 @@
     return sharedStorage;
 }
 
-- (void)getPhotoMetadataAndImageWithIndex:(NSString *)index complete:(OTRequestFinishBlock)completeBlock
+- (void)loginWith:(NSString *)account password:(NSString *)password complete:(TARequestFinishBlock)completeBlock
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
+    
+    NSString *url = [NSString stringWithFormat:@"%@&%@",account,password];
+    
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        completeBlock(YES,nil,responseObject);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        completeBlock(NO,error,nil);
+    }];
+
+}
+
+- (void)getPhotoMetadataAndImageWithIndex:(NSString *)index complete:(TARequestFinishBlock)completeBlock
 {
     [[TANetworkAPI sharedManager] getPhotoMetadataWithIndex:index complete:^(BOOL isSuccess, NSError *err, id responseObject) {
         
@@ -59,7 +77,7 @@
     }];
 }
 
-- (void)getPhotoMetadataWithIndex:(NSString *)photoIndex complete:(OTRequestFinishBlock)completeBlock
+- (void)getPhotoMetadataWithIndex:(NSString *)photoIndex complete:(TARequestFinishBlock)completeBlock
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
@@ -77,7 +95,7 @@
     
 }
 
--(void)getImageWithIndex:(NSString *)photoIndex complete:(OTRequestFinishBlock)completeBlock
+-(void)getImageWithIndex:(NSString *)photoIndex complete:(TARequestFinishBlock)completeBlock
 {
     // Create a dispatch group
     dispatch_group_t group = dispatch_group_create();

@@ -200,7 +200,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 #pragma mark - NetworkAPI
-- (void)callAPIGetData:(NSString *)pageIndex complete:(OTRequestFinishBlock)completeBlock
+- (void)callAPIGetData:(NSString *)pageIndex complete:(TARequestFinishBlock)completeBlock
 {
     [[TANetworkAPI sharedManager] getPhotoMetadataAndImageWithIndex:pageIndex complete:^(BOOL isSuccess, NSError *err, id responseObject) {
         
