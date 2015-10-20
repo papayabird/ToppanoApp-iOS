@@ -5,3 +5,8 @@
   Created by papayabird on 2015/10/20.
   Copyright (c) 2015年 papayabird. All rights reserved.
 */
+
+//MainVC
+"確定要登出?" = "确定要登出?";
+"確定!" = "确定!";
+"取消!" = "取消";

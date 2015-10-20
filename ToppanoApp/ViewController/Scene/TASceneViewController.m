@@ -63,6 +63,9 @@
 {
     [super viewDidAppear:animated];
     
+    toolView.frame = CGRectMake(self.view.frame.size.width, 70, toolView.frame.size.width, toolView.frame.size.height);
+
+    
     /*
     [self callAPIGetData:self.spaceIndex complete:^(BOOL isSuccess, NSError *err, id responseObject) {
         
@@ -119,16 +122,34 @@
             glViewController.view.frame = contentView.bounds;
             [contentView addSubview:glViewController.view];
             
-            [self bringSubviewToFront];
-            
         });
     });
 }
 
-- (void)bringSubviewToFront
+- (void)displayToolButton:(BOOL)isDisplay
 {
-    toolView.frame = CGRectMake(0, 0, toolView.frame.size.width, toolView.frame.size.height);
-    [contentView addSubview:toolView];
+    [self.view addSubview:toolView];
+
+    if (isDisplay) {
+        [UIView animateWithDuration:0.3 animations:^{
+            
+            toolView.frame = CGRectMake(self.view.frame.size.width - toolView.frame.size.width, 70, toolView.frame.size.width, toolView.frame.size.height);
+            
+        } completion:^(BOOL finished) {
+            
+            
+        }];
+    }
+    else {
+        [UIView animateWithDuration:0.3 animations:^{
+            
+            toolView.frame = CGRectMake(self.view.frame.size.width, 70, toolView.frame.size.width, toolView.frame.size.height);
+            
+        } completion:^(BOOL finished) {
+            
+            
+        }];
+    }
 }
 
 #pragma mark - mark UITableView Datasource & Delegate
@@ -189,10 +210,12 @@
     btn.selected = !btn.selected;
     
     if (btn.selected) {
+        [self displayToolButton:YES];
         glViewController.view.alpha = 0.5f;
         glViewController.editType = YES;
     }
     else {
+        [self displayToolButton:NO];
         glViewController.view.alpha = 1.0f;
         glViewController.editType = NO;
     }
