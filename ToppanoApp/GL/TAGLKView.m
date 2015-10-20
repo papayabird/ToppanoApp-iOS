@@ -9,7 +9,7 @@
 #import "TAGLKView.h"
 
 /** Camera FOV initial value */
-#define CAMERA_FOV_DEGREE_INIT          (60.0f)
+#define CAMERA_FOV_DEGREE_INIT          (80.0f)
 /** Camera FOV minimum value */
 #define CAMERA_FOV_DEGREE_MIN           (40.0f)
 /** Camera FOV maximum value */

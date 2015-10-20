@@ -10,7 +10,11 @@
 #import "TAMainViewController.h"
 @interface TALoginViewController ()
 
+{
+    
+}
 
+@property (strong, nonatomic) NSDictionary *userDict;
 @end
 
 @implementation TALoginViewController
@@ -68,6 +72,9 @@
              if (!error)
              {
                  NSLog(@"resultis:%@",result);
+                 
+                 self.userDict = [NSDictionary dictionaryWithDictionary:result];
+                 
                  TAMainViewController *mainVC = [[TAMainViewController alloc] init];
                  [self.navigationController pushViewController:mainVC animated:YES];
 
@@ -96,6 +103,11 @@
     else {
         
     }
+}
+
+- (NSString *)accessibilityValue
+{
+    return self.userDict[@"email"];
 }
 
 @end

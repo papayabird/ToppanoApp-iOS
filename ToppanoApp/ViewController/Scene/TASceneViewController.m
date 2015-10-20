@@ -28,7 +28,7 @@
     TAGLKViewController *glViewController;
     NSMutableArray *dataArray;
     __weak IBOutlet UIView *contentView;
-    __weak IBOutlet UITableView *tableView;
+    __weak IBOutlet UITableView *sceneTableView;
     __weak IBOutlet UIButton *editButton;
     IBOutlet UIView *toolView;
     
@@ -75,7 +75,7 @@
     [self showImage:dataArray[0] rotationAngleXZ:0 rotationAngleY:0];
     
     if ([AppDelegate isPad]) {
-        [tableView reloadData];
+        [sceneTableView reloadData];
     }
 }
 
@@ -141,9 +141,14 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TATableViewCell *cell = [TATableViewCell cell];
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.titleLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row + 1];
     cell.displayImage.image = [UIImage imageNamed:dataArray[indexPath.row][@"sphotoName"]];
+    
+    if (indexPath.row == selectIndex) {
+        cell.backgroundColor = [UIColor lightGrayColor];
+    }
+    
     return cell;
 }
 
@@ -156,12 +161,11 @@
     else {
         
         //非編輯中
-        
-        
         if (selectIndex != indexPath.row) {
             selectIndex = (int)indexPath.row;
             [self showImage:dataArray[indexPath.row] rotationAngleXZ:0 rotationAngleY:0];
         }
+        [sceneTableView reloadData];
     }
 }
 
@@ -171,7 +175,7 @@
 {
     
 #warning 這邊還要做轉場動畫
-    
+    [sceneTableView reloadData];
     [self showImage:dataArray[pageIndex] rotationAngleXZ:rotationAngleXZ rotationAngleY:rotationAngleY];
     selectIndex = pageIndex;
 }
