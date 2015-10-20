@@ -21,6 +21,8 @@
 
 //CocoaPod
 #import <MBProgressHUD.h>
+#import <RMUniversalAlert.h>
+#import <RMPopoverPresentationController.h>
 #import <AFNetworking.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>

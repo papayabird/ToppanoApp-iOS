@@ -34,6 +34,26 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-RMUniversalAlert.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-UIActionSheet+Blocks.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-UIAlertController+Blocks.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-UIAlertView+Blocks.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,37 +62,57 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4D7252F4AFCE03F5F4784B21</key>
+		<key>01451E6B38CBD3B68107153C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5952BA91093ECBB9E5EE321D</key>
+		<key>06EBF7D8C999C95CB08F99B5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5E46E4A106ABDF0261FB0C04</key>
+		<key>7B4303E4E5BE746163F60023</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>960A580AF50D1991933421D2</key>
+		<key>A25E23CABD27F890F0A9AF86</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BC36BB8D7FBA51188FCF65A8</key>
+		<key>A3EA1BA1D01D8644BA228307</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BDF4883DEE72524BF166AB2D</key>
+		<key>ADBDBB0951A520FA82D66E76</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F9DEDB4E5000D2F3A2992FBD</key>
+		<key>B11D188DD2C1CD895DA05CD9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B4AF90C8DF37B70DC4E506F7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E79CF94006002E072139246D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EF20B8B69F7AFF248006E6EB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F5673FD6A59DA84B60BC6203</key>
 		<dict>
 			<key>primary</key>
 			<true/>

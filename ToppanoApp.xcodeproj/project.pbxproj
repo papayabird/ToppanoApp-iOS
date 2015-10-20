@@ -52,6 +52,8 @@
 		D0B914E31BD0DD8F001EE612 /* IMG_2863.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D0B914E21BD0DD8F001EE612 /* IMG_2863.JPG */; };
 		D0B914E71BD0F2C1001EE612 /* TABasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B914E51BD0F2C1001EE612 /* TABasicViewController.m */; };
 		D0B914E81BD0F2C1001EE612 /* TABasicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0B914E61BD0F2C1001EE612 /* TABasicViewController.xib */; };
+		D0BC9C371BD6181F0035F5CF /* TAFBLoginTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BC9C361BD6181F0035F5CF /* TAFBLoginTest.m */; };
+		D0D8573F1BD622BC00557E25 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0D857411BD622BC00557E25 /* Localizable.strings */; };
 		F252930CFABB832773CEEBDD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B965773F0FF28E8872C89649 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +134,9 @@
 		D0B914E41BD0F2C1001EE612 /* TABasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABasicViewController.h; sourceTree = "<group>"; };
 		D0B914E51BD0F2C1001EE612 /* TABasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABasicViewController.m; sourceTree = "<group>"; };
 		D0B914E61BD0F2C1001EE612 /* TABasicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TABasicViewController.xib; sourceTree = "<group>"; };
+		D0BC9C361BD6181F0035F5CF /* TAFBLoginTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAFBLoginTest.m; sourceTree = "<group>"; };
+		D0D857401BD622BC00557E25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D0D857421BD622C600557E25 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +241,7 @@
 				D0AFEF071BCFB0360073D477 /* Info.plist */,
 				D0AFEF081BCFB0360073D477 /* main.m */,
 				D0AFEF341BCFB18D0073D477 /* PrefixHeader.pch */,
+				D0D857411BD622BC00557E25 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -244,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				D0AFEF221BCFB0360073D477 /* ToppanoAppTests.m */,
+				D0BC9C361BD6181F0035F5CF /* TAFBLoginTest.m */,
 				D0AFEF201BCFB0360073D477 /* Supporting Files */,
 			);
 			path = ToppanoAppTests;
@@ -400,6 +407,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
 			);
 			mainGroup = D0AFEEFA1BCFB0360073D477;
 			productRefGroup = D0AFEF041BCFB0360073D477 /* Products */;
@@ -421,6 +429,7 @@
 				D013182C1BD098A700EF6246 /* 0_s.JPG in Resources */,
 				D0B914E31BD0DD8F001EE612 /* IMG_2863.JPG in Resources */,
 				D0AFEF961BCFBA580073D477 /* TAGLKViewController.xib in Resources */,
+				D0D8573F1BD622BC00557E25 /* Localizable.strings in Resources */,
 				D0AFEF8C1BCFB79D0073D477 /* TASceneViewController.xib in Resources */,
 				D013182E1BD098A700EF6246 /* 1_s.JPG in Resources */,
 				D013182D1BD098A700EF6246 /* 0.JPG in Resources */,
@@ -514,6 +523,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0BC9C371BD6181F0035F5CF /* TAFBLoginTest.m in Sources */,
 				D0AFEF231BCFB0360073D477 /* ToppanoAppTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,9 +538,22 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		D0D857411BD622BC00557E25 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0D857401BD622BC00557E25 /* en */,
+				D0D857421BD622C600557E25 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		D0AFEF241BCFB0360073D477 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54E4E473F6C46DAB62FC9D50 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -574,6 +597,7 @@
 		};
 		D0AFEF251BCFB0360073D477 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4CA1A400CA8A53EB0629155 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -639,12 +663,14 @@
 		};
 		D0AFEF2A1BCFB0360073D477 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54E4E473F6C46DAB62FC9D50 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				GCC_PREFIX_HEADER = ToppanoApp/PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -652,22 +678,24 @@
 				INFOPLIST_FILE = ToppanoAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToppanoApp.app/ToppanoApp";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
 		};
 		D0AFEF2B1BCFB0360073D477 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4CA1A400CA8A53EB0629155 /* Pods.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				GCC_PREFIX_HEADER = ToppanoApp/PrefixHeader.pch;
 				INFOPLIST_FILE = ToppanoAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToppanoApp.app/ToppanoApp";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
 		};

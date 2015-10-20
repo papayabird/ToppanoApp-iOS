@@ -102,3 +102,33 @@
 #define COCOAPODS_VERSION_MINOR_MBProgressHUD 9
 #define COCOAPODS_VERSION_PATCH_MBProgressHUD 1
 
+// RMUniversalAlert
+#define COCOAPODS_POD_AVAILABLE_RMUniversalAlert
+#define COCOAPODS_VERSION_MAJOR_RMUniversalAlert 0
+#define COCOAPODS_VERSION_MINOR_RMUniversalAlert 7
+#define COCOAPODS_VERSION_PATCH_RMUniversalAlert 0
+
+// RMUniversalAlert/Core
+#define COCOAPODS_POD_AVAILABLE_RMUniversalAlert_Core
+#define COCOAPODS_VERSION_MAJOR_RMUniversalAlert_Core 0
+#define COCOAPODS_VERSION_MINOR_RMUniversalAlert_Core 7
+#define COCOAPODS_VERSION_PATCH_RMUniversalAlert_Core 0
+
+// UIActionSheet+Blocks
+#define COCOAPODS_POD_AVAILABLE_UIActionSheet_Blocks
+#define COCOAPODS_VERSION_MAJOR_UIActionSheet_Blocks 0
+#define COCOAPODS_VERSION_MINOR_UIActionSheet_Blocks 9
+#define COCOAPODS_VERSION_PATCH_UIActionSheet_Blocks 0
+
+// UIAlertController+Blocks
+#define COCOAPODS_POD_AVAILABLE_UIAlertController_Blocks
+#define COCOAPODS_VERSION_MAJOR_UIAlertController_Blocks 0
+#define COCOAPODS_VERSION_MINOR_UIAlertController_Blocks 9
+#define COCOAPODS_VERSION_PATCH_UIAlertController_Blocks 0
+
+// UIAlertView+Blocks
+#define COCOAPODS_POD_AVAILABLE_UIAlertView_Blocks
+#define COCOAPODS_VERSION_MAJOR_UIAlertView_Blocks 0
+#define COCOAPODS_VERSION_MINOR_UIAlertView_Blocks 9
+#define COCOAPODS_VERSION_PATCH_UIAlertView_Blocks 0
+

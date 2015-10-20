@@ -41,11 +41,20 @@
 
 - (IBAction)logoutAction:(id)sender
 {
-    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-    
-    [login logOut];
-    
-    [self.navigationController popViewControllerAnimated:YES];
+    NSString *titleString = NSLocalizedString(@"確定要登出?", @"String");
+    NSString *cancelString = NSLocalizedString(@"取消!", @"String");
+    NSString *destructivetring = NSLocalizedString(@"確定!", @"String");
+
+    [RMUniversalAlert showAlertInViewController:self withTitle:titleString message:@"" cancelButtonTitle:cancelString destructiveButtonTitle:destructivetring otherButtonTitles:nil tapBlock:^(RMUniversalAlert *alert, NSInteger buttonIndex){
+        if (buttonIndex == alert.cancelButtonIndex) {
+            NSLog(@"Cancel Tapped");
+        } else if (buttonIndex == alert.destructiveButtonIndex) {
+            NSLog(@"Delete Tapped");
+            FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+            [login logOut];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }];
 }
 
 #pragma mark - UICollectionVIew Delegate % Datasource
