@@ -121,6 +121,7 @@
                     
                     [UIImageJPEGRepresentation([UIImage imageWithData:imageData], 2.0f) writeToFile:[NSString stringWithFormat:@"%@/%i.jpg",saveFileName,(i*8 + j)] atomically:YES];
                     
+                    dispatch_group_leave(group);
                 });
             });
         }
