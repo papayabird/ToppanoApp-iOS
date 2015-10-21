@@ -32,7 +32,7 @@
     
     [self returnMetadataPlistPath];
     [self returnPhotoFilePath];
-    
+    [self returnSpaceFolderPath:@"001"];
     [self settingRootVC];
     
     [self.window makeKeyAndVisible];
@@ -58,6 +58,27 @@
         nav.navigationBar.hidden = YES;
         [self.window setRootViewController:nav];
     }
+}
+
+- (NSString *)returnSpaceFolderPath:(NSString *)floderName
+{
+    NSString *Path = [[NSHomeDirectory() stringByAppendingPathComponent:kTASpaceDir] stringByAppendingPathComponent:floderName];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    BOOL isDir;
+    
+    BOOL isExist =  [fileManager fileExistsAtPath:Path isDirectory:&isDir];
+    
+    if (isExist == NO || isDir == NO) {
+        
+        BOOL createSuccess = [fileManager createDirectoryAtPath:Path withIntermediateDirectories:YES attributes:nil error:nil];
+        if (createSuccess == NO) {
+            
+            return nil;
+        }
+    }
+    return Path;
 }
 
 - (NSString *)returnMetadataPlistPath

@@ -27,7 +27,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 //Define
-
+#define kTASpaceDir @"SpaceDir"
 
 //Class
 #import "AppDelegate.h"
