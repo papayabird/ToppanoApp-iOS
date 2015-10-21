@@ -25,16 +25,18 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+- (void)testReturnMetadataPlistPath
+{
+    NSString *metadataDir = [[AppDelegate sharedAppDelegate] returnMetadataPlistPath];
+    
+    XCTAssert(!metadataDir,@"metadataDir create failed");
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testReturnPhotoFilePath
+{
+    NSString *photodataDir = [[AppDelegate sharedAppDelegate] returnPhotoFilePath];
+    
+    XCTAssert(!photodataDir,@"photodataDir create failed");
 }
 
 @end
