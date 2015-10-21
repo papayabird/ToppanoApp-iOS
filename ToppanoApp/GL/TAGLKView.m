@@ -201,7 +201,7 @@ typedef enum : int {
     NSData *imageData2 = [NSData dataWithData:UIImagePNGRepresentation([UIImage imageNamed:@"arrow.png"])];
     
     mTextureInfo3 = [GLKTextureLoader textureWithContentsOfData:imageData2 options:nil error:&error];
-    
+
     [self settingSquareObject];
 }
 
@@ -231,6 +231,15 @@ typedef enum : int {
         
         TASquareObject *square = [[TASquareObject alloc] initSize:[dict[@"size"] floatValue] radius:90 transformPage:[dict[@"nextID"] intValue] transfromTheta:[dict[@"lng"] floatValue] transfromPhi:[dict[@"lat"] floatValue] rotationX:[dict[@"rotateX"] floatValue] rotationY:[dict[@"rotateY"] floatValue] rotationZ:[dict[@"rotateZ"] floatValue]];
         
+        //這邊是在做放各種texture的測試
+        GLuint name2 = mTextureInfo2.name;
+        glDeleteTextures(1,&name2);
+        NSString *name = [NSString stringWithFormat:@"arrow%i.png",arc4random()%2];
+        NSLog(@"%@",name);
+        NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation([UIImage imageNamed:name])];
+        mTextureInfo2 = [GLKTextureLoader textureWithContentsOfData:imageData options:nil error:nil];
+        
+        //
         square.textureInfo = mTextureInfo2;
         square.textureMode = 1;
         [objectArray addObject:square];

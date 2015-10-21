@@ -137,6 +137,53 @@
                            @"rotateZ": @"0",
                            @"nextID": @"00000001"
                            },
+                       //以下都假的
+                       @{
+                           @"lat": @"-47",
+                           @"lng": @"-60",
+                           @"size": @"22",
+                           @"rotateX": @"95",
+                           @"rotateY": @"100",
+                           @"rotateZ": @"0",
+                           @"nextID": @"00000001"
+                           },
+                       @{
+                           @"lat": @"-77",
+                           @"lng": @"-60",
+                           @"size": @"22",
+                           @"rotateX": @"95",
+                           @"rotateY": @"100",
+                           @"rotateZ": @"0",
+                           @"nextID": @"00000001"
+                           },
+                       @{
+                           @"lat": @"-47",
+                           @"lng": @"-10",
+                           @"size": @"22",
+                           @"rotateX": @"95",
+                           @"rotateY": @"100",
+                           @"rotateZ": @"0",
+                           @"nextID": @"00000001"
+                           },
+                       @{
+                           @"lat": @"-47",
+                           @"lng": @"-40",
+                           @"size": @"22",
+                           @"rotateX": @"95",
+                           @"rotateY": @"100",
+                           @"rotateZ": @"0",
+                           @"nextID": @"00000001"
+                           },
+                       @{
+                           @"lat": @"-47",
+                           @"lng": @"-20",
+                           @"size": @"22",
+                           @"rotateX": @"95",
+                           @"rotateY": @"100",
+                           @"rotateZ": @"0",
+                           @"nextID": @"00000001"
+                           },
+                       
                        ] forKey:@"transition"];
     
     [self.dataArray addObject:dict0];
