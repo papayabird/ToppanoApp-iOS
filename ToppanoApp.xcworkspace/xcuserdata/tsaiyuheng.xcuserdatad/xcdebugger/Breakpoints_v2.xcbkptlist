@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ToppanoApp/GL/TAGLKView.m"
-            timestampString = "467263637.922764"
+            filePath = "ToppanoApp/TANetworkAPI.m"
+            timestampString = "467277916.032727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
-            landmarkName = "-settingSphereObject"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "-getPhotoMetadataAndImageWithIndex:complete:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

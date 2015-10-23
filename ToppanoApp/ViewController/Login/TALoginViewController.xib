@@ -15,10 +15,9 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhm-Kd-vvH">
-                    <rect key="frame" x="261" y="145" width="502" height="478"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                    <state key="normal" title="FB">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhm-Kd-vvH">
+                    <rect key="frame" x="305" y="337" width="415" height="94"/>
+                    <state key="normal" image="loginButton">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -28,14 +27,17 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Dhm-Kd-vvH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="145" id="MMP-OP-Uq5"/>
-                <constraint firstAttribute="bottom" secondItem="Dhm-Kd-vvH" secondAttribute="bottom" constant="145" id="QJw-XW-wtz"/>
-                <constraint firstAttribute="trailing" secondItem="Dhm-Kd-vvH" secondAttribute="trailing" constant="261" id="kEN-NF-ay2"/>
-                <constraint firstItem="Dhm-Kd-vvH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="261" id="w4k-7C-g7e"/>
+                <constraint firstItem="Dhm-Kd-vvH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="337" id="MMP-OP-Uq5"/>
+                <constraint firstAttribute="bottom" secondItem="Dhm-Kd-vvH" secondAttribute="bottom" constant="337" id="QJw-XW-wtz"/>
+                <constraint firstAttribute="trailing" secondItem="Dhm-Kd-vvH" secondAttribute="trailing" constant="304" id="kEN-NF-ay2"/>
+                <constraint firstItem="Dhm-Kd-vvH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="305" id="w4k-7C-g7e"/>
             </constraints>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
             <point key="canvasLocation" x="20" y="423"/>
         </view>
     </objects>
+    <resources>
+        <image name="loginButton" width="207" height="47"/>
+    </resources>
 </document>

@@ -165,8 +165,11 @@ typedef enum : int {
             [self killTimer];
             
             // Enable fragment blending with Frame Buffer contents
-//            glEnable(GL_BLEND);
-//            glBlendFunc( GL_SRC_ALPHA , GL_ONE_MINUS_SRC_ALPHA );
+            glEnable(GL_BLEND);
+            glBlendFunc( GL_SRC_ALPHA , GL_ONE_MINUS_SRC_ALPHA );
+            
+            glEnable(GL_DEPTH_TEST);
+            glDepthFunc(GL_LESS);
             
             shell = [[TASphereObject alloc] init:SHELL_RADIUS divide:SHELL_DIVIDE];
         }
