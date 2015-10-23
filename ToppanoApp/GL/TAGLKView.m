@@ -343,12 +343,12 @@ typedef enum : int {
     
     //畫球體
     //把aUV這個參數的id通知shader
-//    glEnableVertexAttribArray(aUV);
-//    [self drawSphere];
+    glEnableVertexAttribArray(aUV);
+    [self drawSphere];
     
     //畫球體fragment
-    glEnableVertexAttribArray(aUV);
-    [self drawSphereFragment];
+//    glEnableVertexAttribArray(aUV);
+//    [self drawSphereFragment];
     
     //畫箭頭
     //把aUV2這個參數的id通知shader
