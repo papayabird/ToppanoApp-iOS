@@ -64,6 +64,8 @@ typedef enum : int {
     GLKTextureInfo *mTextureInfo2;
     GLKTextureInfo *mTextureInfo3;
     
+    GLKTextureLoader *textureLoader;
+    
     GLuint shaderProgram;
     
     NSTimer *_timer;
@@ -122,7 +124,8 @@ typedef enum : int {
     GLint _textureMode;
     
     NSMutableDictionary *dataDictionary;
-    NSMutableArray *objectArray;
+    NSMutableArray *buttonObjectArray;
+    NSMutableArray *sceneObjectArray;
     NSMutableArray *calculateSquareArray;
 }
 
@@ -139,9 +142,11 @@ typedef enum : int {
     
     if (self) {
         
-        objectArray = [NSMutableArray array];
+        buttonObjectArray = [NSMutableArray array];
+        sceneObjectArray = [NSMutableArray array];
         calculateSquareArray = [NSMutableArray array];
-        
+        textureLoader = [[GLKTextureLoader alloc] init];
+
         //滑動延遲
         _kindInertia = NoneInertia;
         
@@ -160,8 +165,8 @@ typedef enum : int {
             [self killTimer];
             
             // Enable fragment blending with Frame Buffer contents
-            glEnable(GL_BLEND);
-            glBlendFunc( GL_SRC_ALPHA , GL_ONE_MINUS_SRC_ALPHA );
+//            glEnable(GL_BLEND);
+//            glBlendFunc( GL_SRC_ALPHA , GL_ONE_MINUS_SRC_ALPHA );
             
             shell = [[TASphereObject alloc] init:SHELL_RADIUS divide:SHELL_DIVIDE];
         }
@@ -202,6 +207,7 @@ typedef enum : int {
     
     mTextureInfo3 = [GLKTextureLoader textureWithContentsOfData:imageData2 options:nil error:&error];
 
+    [self settingSphereObject];
     [self settingSquareObject];
 }
 
@@ -224,25 +230,54 @@ typedef enum : int {
     cameraFovDegree = CAMERA_FOV_DEGREE_INIT;
 }
 
+- (void)settingSphereObject
+{
+    
+    for (int i = 0 ; i < 4 ; i++) {
+        for (int j = 0 ; j < 8 ; j++) {
+            
+            TASphereFragmentObject *spfragmentObj = [[TASphereFragmentObject alloc] init:90
+                                                                           widthSegments:4
+                                                                          heightSegments:8
+                                                                                phiStart:M_PI / 4 * j
+                                                                               phiLength:M_PI / 4
+                                                                              thetaStart:M_PI / 4 * i
+                                                                             thetaLength:M_PI / 4];
+            
+//            NSString *name = [NSString stringWithFormat:@"%i-%i.jpeg",i,j];
+//            GLKTextureInfo *textureInfo = [GLKTextureLoader textureWithCGImage:([[UIImage imageNamed:name] CGImage]) options:nil error:nil];
+            
+            spfragmentObj.textureMode = _textureMode;
+            spfragmentObj.textureInfo = mTextureInfo;
+            
+            [sceneObjectArray addObject:spfragmentObj];
+            
+            /*
+             GLint samplerArrayLoc = glGetUniformLocation(shaderProgram, "uTex");
+             const GLint samplers[32] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31}; // we've bound our textures in textures 0 and 1.
+             glUniform1iv( samplerArrayLoc, 8*i+j    , samplers );
+             */
+        }
+    }
+}
+
 - (void)settingSquareObject
 {
     
     for (NSDictionary *dict in dataDictionary[@"transition"]) {
         
-        TASquareObject *square = [[TASquareObject alloc] initSize:[dict[@"size"] floatValue] radius:90 transformPage:[dict[@"nextID"] intValue] transfromTheta:[dict[@"lng"] floatValue] transfromPhi:[dict[@"lat"] floatValue] rotationX:[dict[@"rotateX"] floatValue] rotationY:[dict[@"rotateY"] floatValue] rotationZ:[dict[@"rotateZ"] floatValue]];
+        TASquareObject *square = [[TASquareObject alloc] initSize:[dict[@"size"] floatValue]
+                                                           radius:90
+                                                    transformPage:[dict[@"nextID"] intValue]
+                                                   transfromTheta:[dict[@"lng"] floatValue]
+                                                     transfromPhi:[dict[@"lat"] floatValue]
+                                                        rotationX:[dict[@"rotateX"] floatValue]
+                                                        rotationY:[dict[@"rotateY"] floatValue]
+                                                        rotationZ:[dict[@"rotateZ"] floatValue]];
         
-        //這邊是在做放各種texture的測試
-        GLuint name2 = mTextureInfo2.name;
-        glDeleteTextures(1,&name2);
-        NSString *name = [NSString stringWithFormat:@"arrow%i.png",arc4random()%2];
-        NSLog(@"%@",name);
-        NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation([UIImage imageNamed:name])];
-        mTextureInfo2 = [GLKTextureLoader textureWithContentsOfData:imageData options:nil error:nil];
-        
-        //
         square.textureInfo = mTextureInfo2;
         square.textureMode = 1;
-        [objectArray addObject:square];
+        [buttonObjectArray addObject:square];
     }
 }
 
@@ -308,8 +343,12 @@ typedef enum : int {
     
     //畫球體
     //把aUV這個參數的id通知shader
+//    glEnableVertexAttribArray(aUV);
+//    [self drawSphere];
+    
+    //畫球體fragment
     glEnableVertexAttribArray(aUV);
-    [self drawSphere];
+    [self drawSphereFragment];
     
     //畫箭頭
     //把aUV2這個參數的id通知shader
@@ -339,9 +378,17 @@ typedef enum : int {
     [shell draw:aPosition uv:aUV textureModeSlot:_textureModeSlot tex:uTex];
 }
 
+- (void)drawSphereFragment
+{
+    for (TASphereFragmentObject *sphereFrag in sceneObjectArray) {
+        
+        [sphereFrag draw:aPosition uv:aUV textureModeSlot:_textureModeSlot tex:uTex];
+    }
+}
+
 - (void)drawSquare
 {
-    for (TASquareObject *square in objectArray) {
+    for (TASquareObject *square in buttonObjectArray) {
         
         [square draw:aPosition uv:aUV2 textureModeSlot:_textureModeSlot tex:uTex2];
     }
@@ -366,7 +413,7 @@ calculVertex TriangleVertice2[] =
 
 - (void)calculate3DTo2D:(CGPoint)tapPoint
 {
-    for (TASquareObject *square in objectArray) {
+    for (TASquareObject *square in buttonObjectArray) {
         
         for (int i = 0; i < 6; i++) {
             TriangleVertice2[i].positionCoords = GLKVector4Make(1, 1, 1, 1);

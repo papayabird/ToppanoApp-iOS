@@ -13,7 +13,7 @@
 #import "TASquareObject.h"
 #import "TASphereObject.h"
 #import "TAGLKViewController.h"
-
+#import "TASphereFragmentObject.h"
 @interface TAGLKView : GLKView
 
 @property (strong, nonatomic) GLKViewController *myViewController;
