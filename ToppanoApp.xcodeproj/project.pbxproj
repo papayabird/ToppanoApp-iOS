@@ -283,6 +283,13 @@
 			path = Resource;
 			sourceTree = SOURCE_ROOT;
 		};
+		D014E5481BDE0B5A005A3D14 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		D0A940D11BD8D79D00C1C266 /* 32image */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +359,7 @@
 				D0AFEF6B1BCFB4610073D477 /* TAMotion.m */,
 				D0AFEF6D1BCFB4BA0073D477 /* TANetworkAPI.h */,
 				D0AFEF6E1BCFB4BA0073D477 /* TANetworkAPI.m */,
+				D014E5481BDE0B5A005A3D14 /* Category */,
 				D0AFEF691BCFB4480073D477 /* ViewController */,
 				D0AFEF681BCFB4480073D477 /* GL */,
 				D0AFEF131BCFB0360073D477 /* Images.xcassets */,
