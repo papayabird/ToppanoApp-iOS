@@ -27,6 +27,7 @@
 {
     TAGLKViewController *glViewController;
     NSMutableArray *dataArray;
+    NSMutableDictionary *daraDict;
     __weak IBOutlet UIView *contentView;
     __weak IBOutlet UITableView *sceneTableView;
     __weak IBOutlet UIButton *editButton;
@@ -39,13 +40,12 @@
 
 @implementation TASceneViewController
 
-- (instancetype)init
+- (instancetype)initWithDataDict:(NSMutableDictionary *)dict
 {
     self = [super init];
     if (self) {
         
-//        dataArray = [NSMutableArray arrayWithArray:[AppDelegate sharedAppDelegate].dataArray];
-        
+        daraDict = dict;
         self.spaceIndex = @"00000001";
     }
     return self;
@@ -64,18 +64,8 @@
     [super viewDidAppear:animated];
     
     toolView.frame = CGRectMake(self.view.frame.size.width, 70, toolView.frame.size.width, toolView.frame.size.height);
-
     
-    /*
-    [self callAPIGetData:self.spaceIndex complete:^(BOOL isSuccess, NSError *err, id responseObject) {
-        
-        
-        
-    }];
-    */
-    
-    
-    [self showImage:dataArray[0] rotationAngleXZ:0 rotationAngleY:0];
+    [self showImage:daraDict rotationAngleXZ:0 rotationAngleY:0];
     
     if ([AppDelegate isPad]) {
         [sceneTableView reloadData];

@@ -188,7 +188,7 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    TASceneViewController *sceneVC = [[TASceneViewController alloc] init];
+    TASceneViewController *sceneVC = [[TASceneViewController alloc] initWithDataDict:MapAllDataArray[indexPath.row]];
     
     [self.navigationController pushViewController:sceneVC animated:YES];
 }

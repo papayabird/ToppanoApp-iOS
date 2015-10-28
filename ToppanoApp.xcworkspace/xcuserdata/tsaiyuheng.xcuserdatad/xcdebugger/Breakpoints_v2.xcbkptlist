@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToppanoApp/TANetworkAPI.m"
-            timestampString = "467692977.189217"
+            timestampString = "467710801.271701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "-getPhotoMetadataAndImageWithIndex:complete:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,6 +42,22 @@
             startingLineNumber = "86"
             endingLineNumber = "86"
             landmarkName = "-init:widthSegments:heightSegments:phiStart:phiLength:thetaStart:thetaLength:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToppanoApp/TAFileManager.m"
+            timestampString = "467709404.503334"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "+getAllMapPlistFromMapFile"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

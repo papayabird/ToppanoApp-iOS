@@ -14,4 +14,6 @@
 
 @property (strong, nonatomic) NSString *spaceIndex;
 
+- (instancetype)initWithDataDict:(NSMutableDictionary *)dict;
+
 @end
