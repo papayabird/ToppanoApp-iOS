@@ -282,7 +282,7 @@ typedef enum : int {
         
         TASquareObject *square = [[TASquareObject alloc] initSize:[dict[@"size"] floatValue]
                                                            radius:90
-                                                    transformPage:[dict[@"nextID"] intValue]
+                                                    transformPage:[dict[@"nextID"] description]
                                                    transfromTheta:[dict[@"lng"] floatValue]
                                                      transfromPhi:[dict[@"lat"] floatValue]
                                                         rotationX:[dict[@"rotateX"] floatValue]
@@ -507,7 +507,7 @@ calculVertex TriangleVertice2[] =
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             
             square.textureInfo = mTextureInfo2;
-            DxLog(@"square.transformPageIndex = %i",square.transformPageIndex);
+            DxLog(@"square.transformPageIndex = %@",square.transformPageIndex);
             
             //換場景
             TAGLKViewController *glVC = (TAGLKViewController *)self.myViewController;

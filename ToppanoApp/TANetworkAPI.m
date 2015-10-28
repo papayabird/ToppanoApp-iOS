@@ -62,37 +62,31 @@
     }];
 }
 
-- (void)getPhotoMetadataAndImageWithIndex:(NSString *)index complete:(TARequestFinishBlock)completeBlock
+- (void)getPhotoMetadataAndImageWithIndex:(NSString *)index mapName:(NSString *)mapName complete:(TARequestFinishBlock)completeBlock
 {
     [[TANetworkAPI sharedManager] getPhotoMetadataWithIndex:index complete:^(BOOL isSuccess, NSError *err, id responseObject) {
         
         if (isSuccess) {
-            /*
-            NSMutableDictionary *metadataArray;
-            metadataArray = [NSMutableDictionary dictionaryWithContentsOfFile:[[AppDelegate sharedAppDelegate] returnMetadataPlistPath]];
-            if (!metadataArray) {
-                metadataArray = [NSMutableDictionary dictionary];
-            }
             
-            [metadataArray setObject:index forKey:responseObject];
+            [responseObject writeToFile:[[TAFileManager returnPhotoFilePathWithFileName:mapName photoFileName:index] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",index]] atomically:YES];
             
-            [metadataArray writeToFile:[[AppDelegate sharedAppDelegate] returnMetadataPlistPath] atomically:YES];
+            __block NSMutableDictionary *dataDict = responseObject;
             
-            [[TANet .workAPI sharedManager]getImageWithIndex:index complete:^(BOOL isSuccess, NSError *err, id responseObject) {
+            [[TANetworkAPI sharedManager]getImageWithIndex:index mapName:mapName complete:^(BOOL isSuccess, NSError *err, id responseObject) {
                 
                 if (isSuccess) {
                     //下載完
 #warning 這邊先合成一張,之後找到32貼圖方法在改掉
-                    [self imageByCombiningImage:index];
+                    [self imageByCombiningImage:index mapName:mapName];
                     
-                    completeBlock(YES,nil,nil);
+                    completeBlock(YES,nil,dataDict);
                 }
                 else {
                     
                     completeBlock(NO,nil,nil);
                 }
             }];
-             */
+            
         }
         else {
             
@@ -102,7 +96,7 @@
     }];
 }
 
-- (void)getPhotoMetadataWithIndex:(NSString *)photoIndex complete:(TARequestFinishBlock)completeBlock
+- (void)getPhotoMetadataWithIndex:(NSString *)photoIndex  complete:(TARequestFinishBlock)completeBlock
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
@@ -120,7 +114,7 @@
     
 }
 
--(void)getImageWithIndex:(NSString *)photoIndex complete:(TARequestFinishBlock)completeBlock
+-(void)getImageWithIndex:(NSString *)photoIndex mapName:(NSString *)mapName complete:(TARequestFinishBlock)completeBlock
 {
     // Create a dispatch group
     dispatch_group_t group = dispatch_group_create();
@@ -142,9 +136,9 @@
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
-//                    NSString *saveFileName = [[[AppDelegate sharedAppDelegate] returnPhotoFilePath] stringByAppendingPathComponent:photoIndex];
+                    NSString *saveFileName = [TAFileManager returnPhotoFilePathWithFileName:mapName photoFileName:photoIndex];
                     
-//                    [UIImageJPEGRepresentation([UIImage imageWithData:imageData], 2.0f) writeToFile:[NSString stringWithFormat:@"%@/%i.jpg",saveFileName,(i*8 + j)] atomically:YES];
+                    [UIImageJPEGRepresentation([UIImage imageWithData:imageData], 2.0f) writeToFile:[NSString stringWithFormat:@"%@/%i.jpg",saveFileName,(i*8 + j)] atomically:YES];
                     
                     dispatch_group_leave(group);
                 });
@@ -162,9 +156,9 @@
     
 }
 
-- (void)imageByCombiningImage:(NSString *)index{
+- (void)imageByCombiningImage:(NSString *)index mapName:(NSString *)mapName{
     
-//    NSString *path = [[[AppDelegate sharedAppDelegate] returnPhotoFilePath]stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@",index]];
+    NSString *path = [TAFileManager returnPhotoFilePathWithFileName:mapName photoFileName:index];
     
     UIImage *image = nil;
     
@@ -176,13 +170,13 @@
         
         for (int j = 0; j < 8; j++) {
             
-//            UIImage *firstImage = [UIImage imageWithContentsOfFile:[path stringByAppendingPathComponent:[NSString stringWithFormat:@"/%i.jpg",imageNumber]]];
+            UIImage *firstImage = [UIImage imageWithContentsOfFile:[[TAFileManager returnPhotoFilePathWithFileName:mapName photoFileName:index] stringByAppendingPathComponent:[NSString stringWithFormat:@"/%i.jpg",imageNumber]]];
             
             CGSize newImageSize = CGSizeMake(3584, 1792);
             
             UIGraphicsBeginImageContext(newImageSize);
             
-//            [firstImage drawAtPoint:CGPointMake(j * 448,i * 448)];
+            [firstImage drawAtPoint:CGPointMake(j * 448,i * 448)];
             
             [originalImage drawAtPoint:CGPointMake(0,0)];
             
@@ -195,7 +189,7 @@
         }
     }
     
-//    [UIImageJPEGRepresentation(image, 2.0f) writeToFile:[NSString stringWithFormat:@"%@/%@.jpg",path,index] atomically:YES];
+    [UIImageJPEGRepresentation(image, 2.0f) writeToFile:[NSString stringWithFormat:@"%@/%@.jpg",[TAFileManager returnPhotoFilePathWithFileName:mapName photoFileName:index],index] atomically:YES];
 }
 
 

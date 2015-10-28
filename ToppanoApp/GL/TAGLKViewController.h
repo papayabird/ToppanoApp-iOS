@@ -11,7 +11,7 @@
 
 @protocol TAGLViewProtocol
 
--(void)transfromView:(int)pageIndex rotationAngleXZ:(double)rotationAngleXZ rotationAngleY:(double)rotationAngleY;
+-(void)transfromView:(NSString *)pageIndex rotationAngleXZ:(double)rotationAngleXZ rotationAngleY:(double)rotationAngleY;
 
 @end
 

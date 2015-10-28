@@ -19,8 +19,6 @@ typedef void (^TARequestFinishBlock)(BOOL isSuccess, NSError *err, id responseOb
 - (void)getMapWithUserId:(NSString *)userId complete:(TARequestFinishBlock)completeBlock;
 
 #pragma mark - 拿場景metadata & photos
-- (void)getPhotoMetadataAndImageWithIndex:(NSString *)index complete:(TARequestFinishBlock)completeBlock;
-
-- (void) TT;
+- (void)getPhotoMetadataAndImageWithIndex:(NSString *)index mapName:(NSString *)mapName complete:(TARequestFinishBlock)completeBlock;
 
 @end

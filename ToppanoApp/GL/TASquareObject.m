@@ -53,7 +53,7 @@ MapVertex mapVertices[] =
 
 @implementation TASquareObject
 
-- (instancetype)initSize:(float)size radius:(float)radius transformPage:(int)transformPage transfromTheta:(float)transfromTheta transfromPhi:(float)transfromPhi rotationX:(float)rotationX rotationY:(float)rotationY rotationZ:(float)rotationZ
+- (instancetype)initSize:(float)size radius:(float)radius transformPage:(NSString *)transformPage transfromTheta:(float)transfromTheta transfromPhi:(float)transfromPhi rotationX:(float)rotationX rotationY:(float)rotationY rotationZ:(float)rotationZ
 {
     self = [super init];
     if (self) {

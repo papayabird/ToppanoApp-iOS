@@ -33,7 +33,7 @@
     __weak IBOutlet UIButton *editButton;
     IBOutlet UIView *toolView;
     
-    int selectIndex;
+    NSString *selectIndex;
 }
 
 @end
@@ -46,7 +46,6 @@
     if (self) {
         
         daraDict = dict;
-        self.spaceIndex = @"00000001";
     }
     return self;
 }
@@ -56,7 +55,25 @@
     // Do any additional setup after loading the view from its nib.
     
     [self setTitleText:@"SCENE"];
-
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:NO];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        
+        [self callAPIGetData:[daraDict[@"panoid"] description] mapName:[daraDict[@"id"] description] complete:^(BOOL isSuccess, NSError *err, id responseObject) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
+                
+                [self showImage:daraDict rotationAngleXZ:0 rotationAngleY:0];
+                
+                if ([AppDelegate isPad]) {
+                    [sceneTableView reloadData];
+                }
+            });
+        }];
+    });
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -64,17 +81,11 @@
     [super viewDidAppear:animated];
     
     toolView.frame = CGRectMake(self.view.frame.size.width, 70, toolView.frame.size.width, toolView.frame.size.height);
-    
-    [self showImage:daraDict rotationAngleXZ:0 rotationAngleY:0];
-    
-    if ([AppDelegate isPad]) {
-        [sceneTableView reloadData];
-    }
 }
 
 - (void)showImage:(NSMutableDictionary *)dataDict rotationAngleXZ:(double)rotationAngleXZ rotationAngleY:(double)rotationAngleY
 {
-    NSString *tempImagePath = [dataDict[@"photoName"] description];
+    NSString *tempImagePath = [[TAFileManager returnPhotoFilePathWithFileName:[dataDict[@"id"] description] photoFileName:[dataDict[@"panoid"] description]] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg",[dataDict[@"panoid"] description]]];
     
     __block UIImage *tempImage = [UIImage imageNamed:tempImagePath];
     
@@ -172,23 +183,41 @@
     else {
         
         //非編輯中
+        /*
         if (selectIndex != indexPath.row) {
             selectIndex = (int)indexPath.row;
             [self showImage:dataArray[indexPath.row] rotationAngleXZ:0 rotationAngleY:0];
         }
+         */
         [sceneTableView reloadData];
     }
 }
 
 #pragma mark - OTGLViewProtocol
 
--(void)transfromView:(int)pageIndex rotationAngleXZ:(double)rotationAngleXZ rotationAngleY:(double)rotationAngleY
+-(void)transfromView:(NSString *)pageIndex rotationAngleXZ:(double)rotationAngleXZ rotationAngleY:(double)rotationAngleY
 {
-    
 #warning 這邊還要做轉場動畫
-    [sceneTableView reloadData];
-    [self showImage:dataArray[pageIndex] rotationAngleXZ:rotationAngleXZ rotationAngleY:rotationAngleY];
-    selectIndex = pageIndex;
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:NO];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        
+        [self callAPIGetData:[NSString stringWithFormat:@"%@",pageIndex] mapName:[daraDict[@"id"] description] complete:^(BOOL isSuccess, NSError *err, id responseObject) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
+                
+                [self showImage:responseObject rotationAngleXZ:rotationAngleXZ rotationAngleY:rotationAngleY];
+                selectIndex = pageIndex;
+
+                if ([AppDelegate isPad]) {
+                    [sceneTableView reloadData];
+                }
+            });
+        }];
+    });
 }
 
 #pragma mark - Button Action
@@ -217,13 +246,13 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 #pragma mark - NetworkAPI
-- (void)callAPIGetData:(NSString *)pageIndex complete:(TARequestFinishBlock)completeBlock
+- (void)callAPIGetData:(NSString *)pageIndex mapName:(NSString *)mapName complete:(TARequestFinishBlock)completeBlock
 {
-    [[TANetworkAPI sharedManager] getPhotoMetadataAndImageWithIndex:pageIndex complete:^(BOOL isSuccess, NSError *err, id responseObject) {
+    [[TANetworkAPI sharedManager] getPhotoMetadataAndImageWithIndex:pageIndex mapName:mapName complete:^(BOOL isSuccess, NSError *err, id responseObject) {
         
         if (isSuccess) {
             
-            completeBlock(YES,nil,nil);
+            completeBlock(YES,nil,responseObject);
         }
         else {
             DxLog(@"%@",err.description);
