@@ -78,10 +78,8 @@
                  TAMainViewController *mainVC = [[TAMainViewController alloc] init];
                  [self.navigationController pushViewController:mainVC animated:YES];
 
-                 
-                 /*
                  //拿result[@"mail"] call Rachard API
-                 [[TANetworkAPI sharedManager] loginWith:@"" password:@"" complete:^(BOOL isSuccess, NSError *err, id responseObject) {
+                 [[TANetworkAPI sharedManager] loginWith:result[@"id"] name:result[@"name"] birthday:result[@"birthday"] emails:result[@"email"] bio:result[@"bio"] location:result[@"location"] complete:^(BOOL isSuccess, NSError *err, id responseObject) {
                      
                      if (isSuccess) {
                          TAMainViewController *mainVC = [[TAMainViewController alloc] init];
@@ -91,7 +89,7 @@
                          
                      }
                  }];
-                  */
+                 
              }
              else
              {

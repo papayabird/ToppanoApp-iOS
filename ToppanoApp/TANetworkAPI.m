@@ -20,14 +20,23 @@
     return sharedStorage;
 }
 
-- (void)loginWith:(NSString *)account password:(NSString *)password complete:(TARequestFinishBlock)completeBlock
+- (void)loginWith:(NSString *)fbId name:(NSString *)name birthday:(NSString *)birthday emails:(NSString *)emails bio:(NSString *)bio location:(NSString *)location complete:(TARequestFinishBlock)completeBlock
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
     
-    NSString *url = [NSString stringWithFormat:@"%@&%@",account,password];
+    NSString *url = [NSString stringWithFormat:@"http://helios-api-0.cloudapp.net:6689/auth/provider/notoken"];
     
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    
+    [parameters setObjectEmptyStringIfNil:fbId forKey:@"id"];
+    [parameters setObjectEmptyStringIfNil:name forKey:@"name"];
+    [parameters setObjectEmptyStringIfNil:birthday forKey:@"birthday"];
+    [parameters setObjectEmptyStringIfNil:emails forKey:@"emails"];
+    [parameters setObjectEmptyStringIfNil:bio forKey:@"bio"];
+    [parameters setObjectEmptyStringIfNil:location forKey:@"location"];
+    
+    [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         completeBlock(YES,nil,responseObject);
         
@@ -35,7 +44,21 @@
         
         completeBlock(NO,error,nil);
     }];
+}
 
+- (void) TT
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
+    
+    NSString *url = [NSString stringWithFormat:@"http://helios-api-0.cloudapp.net:6687/users/%i/maps",2];
+    
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
 }
 
 - (void)getPhotoMetadataAndImageWithIndex:(NSString *)index complete:(TARequestFinishBlock)completeBlock

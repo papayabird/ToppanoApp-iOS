@@ -235,7 +235,22 @@ typedef enum : int {
 
 - (void)settingSphereObject
 {
+    for (int i = 0 ; i < 4 ; i++) {
+        for (int j = 0 ; j < 8 ; j++) {
+                TATestSphere *tt = [[TATestSphere alloc] init:90 widthSegments:1 heightSegments:1 phiStart:M_PI / 4 * j phiLength:M_PI / 4 thetaStart:M_PI / 4 * i thetaLength:M_PI / 4];
+            
+        NSString *name = [NSString stringWithFormat:@"%i-%i.jpeg",i,j];
+        GLKTextureInfo *textureInfo = [GLKTextureLoader textureWithCGImage:([[UIImage imageNamed:name] CGImage]) options:nil error:nil];
+            
+            tt.textureMode = _textureMode;
+            tt.textureInfo = mTextureInfo;
+            
+            [sceneObjectArray addObject:tt];
+        }
+    }
     
+
+    /*
     for (int i = 0 ; i < 4 ; i++) {
         for (int j = 0 ; j < 8 ; j++) {
             
@@ -254,14 +269,9 @@ typedef enum : int {
             spfragmentObj.textureInfo = mTextureInfo;
             
             [sceneObjectArray addObject:spfragmentObj];
-            
-            /*
-             GLint samplerArrayLoc = glGetUniformLocation(shaderProgram, "uTex");
-             const GLint samplers[32] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31}; // we've bound our textures in textures 0 and 1.
-             glUniform1iv( samplerArrayLoc, 8*i+j    , samplers );
-             */
         }
     }
+*/
 }
 
 - (void)settingSquareObject
@@ -346,12 +356,12 @@ typedef enum : int {
     
     //畫球體
     //把aUV這個參數的id通知shader
-    glEnableVertexAttribArray(aUV);
-    [self drawSphere];
+//    glEnableVertexAttribArray(aUV);
+//    [self drawSphere];
     
     //畫球體fragment
-//    glEnableVertexAttribArray(aUV);
-//    [self drawSphereFragment];
+    glEnableVertexAttribArray(aUV);
+    [self drawSphereFragment];
     
     //畫箭頭
     //把aUV2這個參數的id通知shader
@@ -383,10 +393,17 @@ typedef enum : int {
 
 - (void)drawSphereFragment
 {
+    
+    for (TATestSphere *sphereFrag in sceneObjectArray) {
+        [sphereFrag draw:aPosition uv:aUV textureModeSlot:_textureModeSlot tex:uTex];
+    }
+    
+    /*
     for (TASphereFragmentObject *sphereFrag in sceneObjectArray) {
         
         [sphereFrag draw:aPosition uv:aUV textureModeSlot:_textureModeSlot tex:uTex];
     }
+     */
 }
 
 - (void)drawSquare

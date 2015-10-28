@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D01189751BDF1FBC00187AE3 /* TATestSphere.m in Sources */ = {isa = PBXBuildFile; fileRef = D01189741BDF1FBC00187AE3 /* TATestSphere.m */; };
 		D013182C1BD098A700EF6246 /* 0_s.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D013181E1BD098A700EF6246 /* 0_s.JPG */; };
 		D013182D1BD098A700EF6246 /* 0.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D013181F1BD098A700EF6246 /* 0.JPG */; };
 		D013182E1BD098A700EF6246 /* 1_s.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D01318201BD098A700EF6246 /* 1_s.JPG */; };
@@ -23,6 +24,7 @@
 		D01318391BD098A700EF6246 /* arrow1.png in Resources */ = {isa = PBXBuildFile; fileRef = D013182B1BD098A700EF6246 /* arrow1.png */; };
 		D013183B1BD09C2400EF6246 /* TATableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D013183A1BD09C2400EF6246 /* TATableViewCell.xib */; };
 		D0652DFE1BD4DC4A0069B588 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0652DFD1BD4DC4A0069B588 /* Launch Screen.xib */; };
+		D08B4FF91BDF647900B550C8 /* TATestSphere.m in Sources */ = {isa = PBXBuildFile; fileRef = D01189741BDF1FBC00187AE3 /* TATestSphere.m */; };
 		D08E69A21BD7323600BF332B /* TANetworkAPITest.m in Sources */ = {isa = PBXBuildFile; fileRef = D08E69A11BD7323600BF332B /* TANetworkAPITest.m */; };
 		D08E69A31BD7359100BF332B /* TANetworkAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AFEF6E1BCFB4BA0073D477 /* TANetworkAPI.m */; };
 		D08E69A41BD735A000BF332B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AFEF0B1BCFB0360073D477 /* AppDelegate.m */; };
@@ -73,6 +75,7 @@
 		D0A9410F1BD8D79D00C1C266 /* 3-5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D0A940EF1BD8D79D00C1C266 /* 3-5.jpeg */; };
 		D0A941101BD8D79D00C1C266 /* 3-6.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D0A940F01BD8D79D00C1C266 /* 3-6.jpeg */; };
 		D0A941111BD8D79D00C1C266 /* 3-7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D0A940F11BD8D79D00C1C266 /* 3-7.jpeg */; };
+		D0A997D71BDF8CB900C7EBC6 /* NSMutableDictionary+TAPreventNil.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A997D61BDF8CB900C7EBC6 /* NSMutableDictionary+TAPreventNil.m */; };
 		D0AFEF091BCFB0360073D477 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AFEF081BCFB0360073D477 /* main.m */; };
 		D0AFEF0C1BCFB0360073D477 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AFEF0B1BCFB0360073D477 /* AppDelegate.m */; };
 		D0AFEF141BCFB0360073D477 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0AFEF131BCFB0360073D477 /* Images.xcassets */; };
@@ -122,6 +125,8 @@
 		54E4E473F6C46DAB62FC9D50 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A4CA1A400CA8A53EB0629155 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B965773F0FF28E8872C89649 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D01189731BDF1FBC00187AE3 /* TATestSphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATestSphere.h; sourceTree = "<group>"; };
+		D01189741BDF1FBC00187AE3 /* TATestSphere.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATestSphere.m; sourceTree = "<group>"; };
 		D013181E1BD098A700EF6246 /* 0_s.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0_s.JPG; sourceTree = "<group>"; };
 		D013181F1BD098A700EF6246 /* 0.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.JPG; sourceTree = "<group>"; };
 		D01318201BD098A700EF6246 /* 1_s.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1_s.JPG; sourceTree = "<group>"; };
@@ -138,6 +143,7 @@
 		D013182B1BD098A700EF6246 /* arrow1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow1.png; sourceTree = "<group>"; };
 		D013183A1BD09C2400EF6246 /* TATableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TATableViewCell.xib; sourceTree = "<group>"; };
 		D0652DFD1BD4DC4A0069B588 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "../Launch Screen.xib"; sourceTree = "<group>"; };
+		D08B4FB61BDF61CA00B550C8 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		D08E69A11BD7323600BF332B /* TANetworkAPITest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TANetworkAPITest.m; sourceTree = "<group>"; };
 		D0A940D21BD8D79D00C1C266 /* 0-0.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "0-0.jpeg"; sourceTree = "<group>"; };
 		D0A940D31BD8D79D00C1C266 /* 0-1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "0-1.jpeg"; sourceTree = "<group>"; };
@@ -171,6 +177,8 @@
 		D0A940EF1BD8D79D00C1C266 /* 3-5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "3-5.jpeg"; sourceTree = "<group>"; };
 		D0A940F01BD8D79D00C1C266 /* 3-6.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "3-6.jpeg"; sourceTree = "<group>"; };
 		D0A940F11BD8D79D00C1C266 /* 3-7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "3-7.jpeg"; sourceTree = "<group>"; };
+		D0A997D51BDF8CB900C7EBC6 /* NSMutableDictionary+TAPreventNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+TAPreventNil.h"; sourceTree = "<group>"; };
+		D0A997D61BDF8CB900C7EBC6 /* NSMutableDictionary+TAPreventNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+TAPreventNil.m"; sourceTree = "<group>"; };
 		D0AFEF031BCFB0360073D477 /* ToppanoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToppanoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0AFEF071BCFB0360073D477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0AFEF081BCFB0360073D477 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -251,6 +259,7 @@
 		56ACE21681104275478E0417 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D08B4FB61BDF61CA00B550C8 /* SceneKit.framework */,
 				D0AFEF321BCFB10F0073D477 /* OpenGLES.framework */,
 				D0AFEF301BCFB1060073D477 /* GLKit.framework */,
 				D0AFEF2E1BCFB1000073D477 /* CoreMotion.framework */,
@@ -282,13 +291,6 @@
 			);
 			path = Resource;
 			sourceTree = SOURCE_ROOT;
-		};
-		D014E5481BDE0B5A005A3D14 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Category;
-			sourceTree = "<group>";
 		};
 		D0A940D11BD8D79D00C1C266 /* 32image */ = {
 			isa = PBXGroup;
@@ -329,6 +331,15 @@
 			path = 32image;
 			sourceTree = "<group>";
 		};
+		D0A997D41BDF8CA900C7EBC6 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				D0A997D51BDF8CB900C7EBC6 /* NSMutableDictionary+TAPreventNil.h */,
+				D0A997D61BDF8CB900C7EBC6 /* NSMutableDictionary+TAPreventNil.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		D0AFEEFA1BCFB0360073D477 = {
 			isa = PBXGroup;
 			children = (
@@ -359,7 +370,7 @@
 				D0AFEF6B1BCFB4610073D477 /* TAMotion.m */,
 				D0AFEF6D1BCFB4BA0073D477 /* TANetworkAPI.h */,
 				D0AFEF6E1BCFB4BA0073D477 /* TANetworkAPI.m */,
-				D014E5481BDE0B5A005A3D14 /* Category */,
+				D0A997D41BDF8CA900C7EBC6 /* Category */,
 				D0AFEF691BCFB4480073D477 /* ViewController */,
 				D0AFEF681BCFB4480073D477 /* GL */,
 				D0AFEF131BCFB0360073D477 /* Images.xcassets */,
@@ -413,6 +424,8 @@
 				D0AFEF9E1BCFBBC40073D477 /* TASphereObject.m */,
 				D0ED76061BD788140053962C /* TASphereFragmentObject.h */,
 				D0ED76071BD788140053962C /* TASphereFragmentObject.m */,
+				D01189731BDF1FBC00187AE3 /* TATestSphere.h */,
+				D01189741BDF1FBC00187AE3 /* TATestSphere.m */,
 				D0AFEFA01BCFBCE10073D477 /* VertexShader.vsh */,
 				D0AFEFA21BCFBCF20073D477 /* FragmentShader.fsh */,
 			);
@@ -679,8 +692,10 @@
 				D0AFEF8B1BCFB79D0073D477 /* TASceneViewController.m in Sources */,
 				D0AFEF0C1BCFB0360073D477 /* AppDelegate.m in Sources */,
 				D0AFEF951BCFBA580073D477 /* TAGLKViewController.m in Sources */,
+				D01189751BDF1FBC00187AE3 /* TATestSphere.m in Sources */,
 				D0AFEF091BCFB0360073D477 /* main.m in Sources */,
 				D0AFEF851BCFB6EB0073D477 /* TAMainViewController.m in Sources */,
+				D0A997D71BDF8CB900C7EBC6 /* NSMutableDictionary+TAPreventNil.m in Sources */,
 				D0B914E71BD0F2C1001EE612 /* TABasicViewController.m in Sources */,
 				D0AFEF9F1BCFBBC40073D477 /* TASphereObject.m in Sources */,
 				D0AFEF901BCFB8FE0073D477 /* TATableViewCell.m in Sources */,
@@ -703,6 +718,7 @@
 				D08E69AE1BD735C000BF332B /* TASquareObject.m in Sources */,
 				D08E69A51BD735AA00BF332B /* TABasicViewController.m in Sources */,
 				D08E69A81BD735B100BF332B /* TAMainViewController.m in Sources */,
+				D08B4FF91BDF647900B550C8 /* TATestSphere.m in Sources */,
 				D0BC9C371BD6181F0035F5CF /* TAFBLoginTest.m in Sources */,
 				D0AFEF231BCFB0360073D477 /* ToppanoAppTests.m in Sources */,
 				D08E69A31BD7359100BF332B /* TANetworkAPI.m in Sources */,

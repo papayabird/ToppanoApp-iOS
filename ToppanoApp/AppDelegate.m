@@ -44,6 +44,10 @@
 {
     if ([FBSDKAccessToken currentAccessToken]){
         //還在登入中
+        
+        
+        
+        
         TALoginViewController *loginVC = [[TALoginViewController alloc] init];
         TAMainViewController *mainVC = [[TAMainViewController alloc] init];
         UINavigationController *nav = [[UINavigationController alloc] init];

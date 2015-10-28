@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToppanoApp/TANetworkAPI.m"
-            timestampString = "467277916.032727"
+            timestampString = "467636436.78807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "-getPhotoMetadataAndImageWithIndex:complete:"
             landmarkType = "5">
          </BreakpointContent>
@@ -35,13 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ToppanoApp/ViewController/Login/TALoginViewController.m"
-            timestampString = "467546082.867172"
+            filePath = "ToppanoApp/GL/TATestSphere.m"
+            timestampString = "467634789.814569"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "-fetchUserInfo"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "-init:widthSegments:heightSegments:phiStart:phiLength:thetaStart:thetaLength:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

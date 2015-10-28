@@ -14,6 +14,7 @@
 #import "TASphereObject.h"
 #import "TAGLKViewController.h"
 #import "TASphereFragmentObject.h"
+#import "TATestSphere.h"
 @interface TAGLKView : GLKView
 
 @property (strong, nonatomic) GLKViewController *myViewController;
