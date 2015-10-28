@@ -27,13 +27,14 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 //Define
-#define kTASpaceDir @"SpaceDir"
+#define kTAMapDir @"MapDir"
 
 //Class
 #import "AppDelegate.h"
 #import "TABasicViewController.h"
 #import "TANetworkAPI.h"
 #import "NSMutableDictionary+TAPreventNil.h"
+#import "TAFileManager.h"
 
 //Notification String
 #define OTGLKViewTapGestureNotification

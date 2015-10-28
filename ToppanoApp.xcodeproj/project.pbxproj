@@ -105,8 +105,11 @@
 		D0B914E31BD0DD8F001EE612 /* IMG_2863.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D0B914E21BD0DD8F001EE612 /* IMG_2863.JPG */; };
 		D0B914E71BD0F2C1001EE612 /* TABasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B914E51BD0F2C1001EE612 /* TABasicViewController.m */; };
 		D0B914E81BD0F2C1001EE612 /* TABasicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0B914E61BD0F2C1001EE612 /* TABasicViewController.xib */; };
+		D0BB45821BE07DBC0098A356 /* TAFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BB45811BE07DBC0098A356 /* TAFileManager.m */; };
 		D0BC9C371BD6181F0035F5CF /* TAFBLoginTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BC9C361BD6181F0035F5CF /* TAFBLoginTest.m */; };
 		D0D8573F1BD622BC00557E25 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0D857411BD622BC00557E25 /* Localizable.strings */; };
+		D0DF048B1BE09ABA00649D1D /* TAMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0AFEF821BCFB6EB0073D477 /* TAMainViewController.xib */; };
+		D0DF048C1BE09B0E00649D1D /* TAFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BB45811BE07DBC0098A356 /* TAFileManager.m */; };
 		D0ED76081BD788140053962C /* TASphereFragmentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D0ED76071BD788140053962C /* TASphereFragmentObject.m */; };
 		F252930CFABB832773CEEBDD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B965773F0FF28E8872C89649 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -226,6 +229,8 @@
 		D0B914E41BD0F2C1001EE612 /* TABasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABasicViewController.h; sourceTree = "<group>"; };
 		D0B914E51BD0F2C1001EE612 /* TABasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TABasicViewController.m; sourceTree = "<group>"; };
 		D0B914E61BD0F2C1001EE612 /* TABasicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TABasicViewController.xib; sourceTree = "<group>"; };
+		D0BB45801BE07DBC0098A356 /* TAFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAFileManager.h; sourceTree = "<group>"; };
+		D0BB45811BE07DBC0098A356 /* TAFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAFileManager.m; sourceTree = "<group>"; };
 		D0BC9C361BD6181F0035F5CF /* TAFBLoginTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAFBLoginTest.m; sourceTree = "<group>"; };
 		D0D857401BD622BC00557E25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D0D857431BD62BE800557E25 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -370,6 +375,8 @@
 				D0AFEF6B1BCFB4610073D477 /* TAMotion.m */,
 				D0AFEF6D1BCFB4BA0073D477 /* TANetworkAPI.h */,
 				D0AFEF6E1BCFB4BA0073D477 /* TANetworkAPI.m */,
+				D0BB45801BE07DBC0098A356 /* TAFileManager.h */,
+				D0BB45811BE07DBC0098A356 /* TAFileManager.m */,
 				D0A997D41BDF8CA900C7EBC6 /* Category */,
 				D0AFEF691BCFB4480073D477 /* ViewController */,
 				D0AFEF681BCFB4480073D477 /* GL */,
@@ -643,6 +650,7 @@
 			files = (
 				D08E69B11BD735C600BF332B /* FragmentShader.fsh in Resources */,
 				D08E69B21BD735CD00BF332B /* Localizable.strings in Resources */,
+				D0DF048B1BE09ABA00649D1D /* TAMainViewController.xib in Resources */,
 				D08E69B01BD735C500BF332B /* VertexShader.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -703,6 +711,7 @@
 				D0AFEF6F1BCFB4BA0073D477 /* TANetworkAPI.m in Sources */,
 				D0B914E01BD0D18F001EE612 /* TAMainCollectionViewCell.m in Sources */,
 				D0AFEF831BCFB6EB0073D477 /* TALoginViewController.m in Sources */,
+				D0BB45821BE07DBC0098A356 /* TAFileManager.m in Sources */,
 				D0AFEF6C1BCFB4610073D477 /* TAMotion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -722,6 +731,7 @@
 				D0BC9C371BD6181F0035F5CF /* TAFBLoginTest.m in Sources */,
 				D0AFEF231BCFB0360073D477 /* ToppanoAppTests.m in Sources */,
 				D08E69A31BD7359100BF332B /* TANetworkAPI.m in Sources */,
+				D0DF048C1BE09B0E00649D1D /* TAFileManager.m in Sources */,
 				D08E69A91BD735B500BF332B /* TAMainCollectionViewCell.m in Sources */,
 				D08E69A21BD7323600BF332B /* TANetworkAPITest.m in Sources */,
 				D08E69AA1BD735B700BF332B /* TASceneViewController.m in Sources */,

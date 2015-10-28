@@ -14,7 +14,6 @@
     
 }
 
-@property (strong, nonatomic) NSDictionary *userDict;
 @end
 
 @implementation TALoginViewController
@@ -73,26 +72,19 @@
              {
                  NSLog(@"resultis:%@",result);
                  
-                 self.userDict = [NSDictionary dictionaryWithDictionary:result];
-                 
                  TAMainViewController *mainVC = [[TAMainViewController alloc] init];
+                 mainVC.userDict = result;
                  [self.navigationController pushViewController:mainVC animated:YES];
-
-                 //拿result[@"mail"] call Rachard API
-                 [[TANetworkAPI sharedManager] loginWith:result[@"id"] name:result[@"name"] birthday:result[@"birthday"] emails:result[@"email"] bio:result[@"bio"] location:result[@"location"] complete:^(BOOL isSuccess, NSError *err, id responseObject) {
-                     
-                     if (isSuccess) {
-                         TAMainViewController *mainVC = [[TAMainViewController alloc] init];
-                         [self.navigationController pushViewController:mainVC animated:YES];
-                     }
-                     else {
-                         
-                     }
-                 }];
-                 
-             }
+            }
              else
              {
+                 NSString *titleString = NSLocalizedString(@"FB撈取資料失敗", @"String");
+                 NSString *cancelString = NSLocalizedString(@"確認", @"String");
+                 
+                 [RMUniversalAlert showAlertInViewController:self withTitle:titleString message:@"" cancelButtonTitle:cancelString destructiveButtonTitle:nil otherButtonTitles:nil tapBlock:^(RMUniversalAlert *alert, NSInteger buttonIndex){
+
+                     
+                 }];
                  NSLog(@"Error %@",error);
              }
          }];
@@ -101,11 +93,6 @@
     else {
         
     }
-}
-
-- (NSString *)accessibilityValue
-{
-    return self.userDict[@"email"];
 }
 
 @end

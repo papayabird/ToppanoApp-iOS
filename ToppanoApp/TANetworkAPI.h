@@ -15,6 +15,9 @@ typedef void (^TARequestFinishBlock)(BOOL isSuccess, NSError *err, id responseOb
 +(instancetype)sharedManager;
 #pragma mark - 登入
 - (void)loginWith:(NSString *)fbId name:(NSString *)name birthday:(NSString *)birthday emails:(NSString *)emails bio:(NSString *)bio location:(NSString *)location complete:(TARequestFinishBlock)completeBlock;
+#pragma mark - 拿取map
+- (void)getMapWithUserId:(NSString *)userId complete:(TARequestFinishBlock)completeBlock;
+
 #pragma mark - 拿場景metadata & photos
 - (void)getPhotoMetadataAndImageWithIndex:(NSString *)index complete:(TARequestFinishBlock)completeBlock;
 

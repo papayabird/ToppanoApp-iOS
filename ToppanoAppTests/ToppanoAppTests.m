@@ -25,18 +25,5 @@
     [super tearDown];
 }
 
-- (void)testReturnMetadataPlistPath
-{
-    NSString *metadataDir = [[AppDelegate sharedAppDelegate] returnMetadataPlistPath];
-    
-    XCTAssert(!metadataDir,@"metadataDir create failed");
-}
-
-- (void)testReturnPhotoFilePath
-{
-    NSString *photodataDir = [[AppDelegate sharedAppDelegate] returnPhotoFilePath];
-    
-    XCTAssert(!photodataDir,@"photodataDir create failed");
-}
 
 @end

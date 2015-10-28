@@ -28,11 +28,8 @@
     //FB
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
-    [self settingData];
+
     
-    [self returnMetadataPlistPath];
-    [self returnPhotoFilePath];
-    [self returnSpaceFolderPath:@"001"];
     [self settingRootVC];
     
     [self.window makeKeyAndVisible];
@@ -45,11 +42,9 @@
     if ([FBSDKAccessToken currentAccessToken]){
         //還在登入中
         
-        
-        
-        
         TALoginViewController *loginVC = [[TALoginViewController alloc] init];
         TAMainViewController *mainVC = [[TAMainViewController alloc] init];
+        
         UINavigationController *nav = [[UINavigationController alloc] init];
         nav.viewControllers = @[loginVC, mainVC];
         nav.navigationBar.hidden = YES;
@@ -62,73 +57,6 @@
         nav.navigationBar.hidden = YES;
         [self.window setRootViewController:nav];
     }
-}
-
-- (NSString *)returnSpaceFolderPath:(NSString *)floderName
-{
-    NSString *Path = [[NSHomeDirectory() stringByAppendingPathComponent:kTASpaceDir] stringByAppendingPathComponent:floderName];
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    
-    BOOL isDir;
-    
-    BOOL isExist =  [fileManager fileExistsAtPath:Path isDirectory:&isDir];
-    
-    if (isExist == NO || isDir == NO) {
-        
-        BOOL createSuccess = [fileManager createDirectoryAtPath:Path withIntermediateDirectories:YES attributes:nil error:nil];
-        if (createSuccess == NO) {
-            
-            return nil;
-        }
-    }
-    return Path;
-}
-
-- (NSString *)returnMetadataPlistPath
-{
-    NSString *Path = [NSHomeDirectory() stringByAppendingPathComponent:@"MetadataDir"];
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    
-    BOOL isDir;
-    
-    BOOL isExist =  [fileManager fileExistsAtPath:Path isDirectory:&isDir];
-    
-    if (isExist == NO || isDir == NO) {
-        
-        BOOL createSuccess = [fileManager createDirectoryAtPath:Path withIntermediateDirectories:YES attributes:nil error:nil];
-        if (createSuccess == NO) {
-            
-            return nil;
-        }
-    }
-    
-    NSString *pushBoxPlistPath = [Path stringByAppendingPathComponent:@"MetadataPlist.plist"];
-    
-    return pushBoxPlistPath;
-}
-
-- (NSString *)returnPhotoFilePath
-{
-    NSString *Path = [NSHomeDirectory() stringByAppendingPathComponent:@"PhotoFileDir"];
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    
-    BOOL isDir;
-    
-    BOOL isExist =  [fileManager fileExistsAtPath:Path isDirectory:&isDir];
-    
-    if (isExist == NO || isDir == NO) {
-        
-        BOOL createSuccess = [fileManager createDirectoryAtPath:Path withIntermediateDirectories:YES attributes:nil error:nil];
-        if (createSuccess == NO) {
-            
-            return nil;
-        }
-    }
-    
-    return Path;
 }
 
 - (void)settingData
@@ -146,7 +74,7 @@
      }
      ]
      */
-    
+    /*
     self.dataArray = [NSMutableArray array];
     
     NSMutableDictionary *dict0 = [NSMutableDictionary dictionary];
@@ -245,7 +173,7 @@
                        ] forKey:@"buttonArray"];
     
     [self.dataArray addObject:dict5];
-    
+    */
 }
 
 

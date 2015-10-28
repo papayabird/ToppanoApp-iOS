@@ -10,4 +10,6 @@
 
 @interface TAMainViewController : TABasicViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
+@property (strong, nonatomic) NSMutableDictionary *userDict;
+
 @end

@@ -210,7 +210,7 @@ typedef enum : int {
     
     mTextureInfo3 = [GLKTextureLoader textureWithContentsOfData:imageData2 options:nil error:&error];
 
-    [self settingSphereObject];
+//    [self settingSphereObject];
     [self settingSquareObject];
 }
 
@@ -235,6 +235,7 @@ typedef enum : int {
 
 - (void)settingSphereObject
 {
+    
     for (int i = 0 ; i < 4 ; i++) {
         for (int j = 0 ; j < 8 ; j++) {
                 TATestSphere *tt = [[TATestSphere alloc] init:90 widthSegments:1 heightSegments:1 phiStart:M_PI / 4 * j phiLength:M_PI / 4 thetaStart:M_PI / 4 * i thetaLength:M_PI / 4];
@@ -356,12 +357,12 @@ typedef enum : int {
     
     //畫球體
     //把aUV這個參數的id通知shader
-//    glEnableVertexAttribArray(aUV);
-//    [self drawSphere];
+    glEnableVertexAttribArray(aUV);
+    [self drawSphere];
     
     //畫球體fragment
-    glEnableVertexAttribArray(aUV);
-    [self drawSphereFragment];
+//    glEnableVertexAttribArray(aUV);
+//    [self drawSphereFragment];
     
     //畫箭頭
     //把aUV2這個參數的id通知shader

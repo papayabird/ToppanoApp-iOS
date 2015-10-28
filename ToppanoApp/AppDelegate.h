@@ -12,14 +12,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) NSMutableArray *dataArray;
-
 + (AppDelegate *)sharedAppDelegate;
 
 + (BOOL)isPad;
-
-- (NSString *)returnMetadataPlistPath;
-- (NSString *)returnPhotoFilePath;
 
 @end
 

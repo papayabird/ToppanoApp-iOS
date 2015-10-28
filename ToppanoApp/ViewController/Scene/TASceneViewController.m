@@ -44,7 +44,7 @@
     self = [super init];
     if (self) {
         
-        dataArray = [NSMutableArray arrayWithArray:[AppDelegate sharedAppDelegate].dataArray];
+//        dataArray = [NSMutableArray arrayWithArray:[AppDelegate sharedAppDelegate].dataArray];
         
         self.spaceIndex = @"00000001";
     }

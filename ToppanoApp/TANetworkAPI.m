@@ -46,18 +46,19 @@
     }];
 }
 
-- (void) TT
+- (void)getMapWithUserId:(NSString *)userId complete:(TARequestFinishBlock)completeBlock
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
     
-    NSString *url = [NSString stringWithFormat:@"http://helios-api-0.cloudapp.net:6687/users/%i/maps",2];
+    NSString *url = [NSString stringWithFormat:@"http://helios-api-0.cloudapp.net:6687/users/%@/maps",userId];
     
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        
+        completeBlock(YES,nil,responseObject);
+
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+        completeBlock(NO,error,nil);
     }];
 }
 
@@ -66,7 +67,7 @@
     [[TANetworkAPI sharedManager] getPhotoMetadataWithIndex:index complete:^(BOOL isSuccess, NSError *err, id responseObject) {
         
         if (isSuccess) {
-            
+            /*
             NSMutableDictionary *metadataArray;
             metadataArray = [NSMutableDictionary dictionaryWithContentsOfFile:[[AppDelegate sharedAppDelegate] returnMetadataPlistPath]];
             if (!metadataArray) {
@@ -77,7 +78,7 @@
             
             [metadataArray writeToFile:[[AppDelegate sharedAppDelegate] returnMetadataPlistPath] atomically:YES];
             
-            [[TANetworkAPI sharedManager]getImageWithIndex:index complete:^(BOOL isSuccess, NSError *err, id responseObject) {
+            [[TANet .workAPI sharedManager]getImageWithIndex:index complete:^(BOOL isSuccess, NSError *err, id responseObject) {
                 
                 if (isSuccess) {
                     //下載完
@@ -91,6 +92,7 @@
                     completeBlock(NO,nil,nil);
                 }
             }];
+             */
         }
         else {
             
@@ -140,9 +142,9 @@
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
-                    NSString *saveFileName = [[[AppDelegate sharedAppDelegate] returnPhotoFilePath] stringByAppendingPathComponent:photoIndex];
+//                    NSString *saveFileName = [[[AppDelegate sharedAppDelegate] returnPhotoFilePath] stringByAppendingPathComponent:photoIndex];
                     
-                    [UIImageJPEGRepresentation([UIImage imageWithData:imageData], 2.0f) writeToFile:[NSString stringWithFormat:@"%@/%i.jpg",saveFileName,(i*8 + j)] atomically:YES];
+//                    [UIImageJPEGRepresentation([UIImage imageWithData:imageData], 2.0f) writeToFile:[NSString stringWithFormat:@"%@/%i.jpg",saveFileName,(i*8 + j)] atomically:YES];
                     
                     dispatch_group_leave(group);
                 });
@@ -162,7 +164,7 @@
 
 - (void)imageByCombiningImage:(NSString *)index{
     
-    NSString *path = [[[AppDelegate sharedAppDelegate] returnPhotoFilePath]stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@",index]];
+//    NSString *path = [[[AppDelegate sharedAppDelegate] returnPhotoFilePath]stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@",index]];
     
     UIImage *image = nil;
     
@@ -174,13 +176,13 @@
         
         for (int j = 0; j < 8; j++) {
             
-            UIImage *firstImage = [UIImage imageWithContentsOfFile:[path stringByAppendingPathComponent:[NSString stringWithFormat:@"/%i.jpg",imageNumber]]];
+//            UIImage *firstImage = [UIImage imageWithContentsOfFile:[path stringByAppendingPathComponent:[NSString stringWithFormat:@"/%i.jpg",imageNumber]]];
             
             CGSize newImageSize = CGSizeMake(3584, 1792);
             
             UIGraphicsBeginImageContext(newImageSize);
             
-            [firstImage drawAtPoint:CGPointMake(j * 448,i * 448)];
+//            [firstImage drawAtPoint:CGPointMake(j * 448,i * 448)];
             
             [originalImage drawAtPoint:CGPointMake(0,0)];
             
@@ -193,7 +195,7 @@
         }
     }
     
-    [UIImageJPEGRepresentation(image, 2.0f) writeToFile:[NSString stringWithFormat:@"%@/%@.jpg",path,index] atomically:YES];
+//    [UIImageJPEGRepresentation(image, 2.0f) writeToFile:[NSString stringWithFormat:@"%@/%@.jpg",path,index] atomically:YES];
 }
 
 
