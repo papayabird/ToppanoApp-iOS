@@ -12,6 +12,7 @@
 @interface TAMainViewController ()
 
 {
+    MBProgressHUD *hud;
     NSString *userIdString;
     NSMutableArray *MapAllDataArray;
 }
@@ -29,7 +30,9 @@
     [self.mainCollectionView registerNib:aNibNotification forCellWithReuseIdentifier:@"TAMainCollectionViewCell"];
     // Do any additional setup after loading the view from its nib.
     [self setTitleText:@"SPACE LIST"];
-    
+    hud = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:hud];
+
     [self getMainData:[AppDelegate sharedAppDelegate].userId];
 }
 
@@ -45,7 +48,8 @@
 
 - (void)getMainData:(NSString *)userId
 {
-    [MBProgressHUD showHUDAddedTo:self.view animated:NO];
+    hud.labelText = @"取得建案";
+    [hud show:YES];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
         
@@ -53,7 +57,7 @@
             
             dispatch_async(dispatch_get_main_queue(), ^(void) {
                 
-                [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
+                [hud hide:YES];
                 
                 if (isSuccess) {
                     NSLog(@"%@",responseObject);

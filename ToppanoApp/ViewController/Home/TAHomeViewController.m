@@ -8,13 +8,27 @@
 
 #import "TAHomeViewController.h"
 #import "TAMainViewController.h"
+
+@interface TAHomeViewController()
+
+{
+    MBProgressHUD *hud;
+}
+
+@end
+
+
+
+
 @implementation TAHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setTitleText:@"HOME"];
-    
+    hud = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:hud];
+
     [self loginAndGetData];
 }
 
@@ -35,18 +49,20 @@
     
 #warning 這邊因為server還沒有紀錄userid所以每次都要call登入,每次跟FB fetch
     
+    hud.labelText = @"登入中請稍候";
+    
     [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name, link, first_name, last_name, picture.type(large), email, birthday, bio ,location ,friends ,hometown , friendlists"}]
      startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
          if (!error)
          {
              
-             [MBProgressHUD showHUDAddedTo:self.view animated:NO];
+             [hud show:YES];
              
              dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
                  
                  [[TANetworkAPI sharedManager] loginWith:result[@"id"] name:result[@"name"] birthday:result[@"birthday"] emails:result[@"email"] bio:result[@"bio"] location:result[@"location"] complete:^(BOOL isSuccess, NSError *err, id responseObject) {
                      
-                     [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
+                     [hud hide:YES];
                      
                      dispatch_async(dispatch_get_main_queue(), ^(void) {
                          

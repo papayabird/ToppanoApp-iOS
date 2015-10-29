@@ -25,6 +25,7 @@
 @interface TASceneViewController ()
 
 {
+    MBProgressHUD *hud;
     TAGLKViewController *glViewController;
     NSMutableArray *dataArray;
     NSMutableDictionary *daraDict;
@@ -52,16 +53,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
+
     [self setTitleText:@"SCENE"];
+    hud = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:hud];
+    
     
     if ([self checkoutImageisExist:[daraDict[PanoId] description]]) {
         
         [self showImage:daraDict rotationAngleXZ:0 rotationAngleY:0];
     }
     else {
-        [MBProgressHUD showHUDAddedTo:self.view animated:NO];
+        hud.labelText = @"下載圖片中";
+        [hud show:YES];
 
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
             
@@ -69,7 +73,7 @@
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
-                    [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
+                    [hud hide:YES];
                     
                     [self showImage:daraDict rotationAngleXZ:0 rotationAngleY:0];
                     
@@ -108,39 +112,20 @@
     
     __weak TASceneViewController *weakSelf = self;
     
-    [MBProgressHUD showHUDAddedTo:contentView animated:NO];
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         
-        CGFloat width = tempImage.size.width;
-        CGFloat height = tempImage.size.height;
-        /*
-        while (width > 2048) {
-            @autoreleasepool {
-                //                NSLog(@"width = %f, height = %f",width,height);
-                width /= 1.2;
-                height /= 1.2;
-                tempImage = [UIImage imageWithImage:tempImage scaledToSize:CGSizeMake(tempImage.size.width / 1.2, tempImage.size.height / 1.2)];
-            }
-        }
-        */
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            [MBProgressHUD hideAllHUDsForView:contentView animated:NO];
-            
-            NSMutableData *imageData = [NSMutableData dataWithData:UIImageJPEGRepresentation(tempImage, 2)];
-            
-            [glViewController releaseRenderView];
-            glViewController = nil;
-            [glViewController.view removeFromSuperview];
-            
-            glViewController = [[TAGLKViewController sharedManager] init:contentView.bounds image:imageData width:contentView.frame.size.width height:contentView.frame.size.height dataDict:dataDict rotationAngleXZ:rotationAngleXZ rotationAngleY:rotationAngleY];
-            glViewController.tapDelegate = weakSelf;
-            
-            glViewController.view.frame = contentView.bounds;
-            [contentView addSubview:glViewController.view];
-            
-        });
+        NSMutableData *imageData = [NSMutableData dataWithData:UIImageJPEGRepresentation(tempImage, 2)];
+        
+        [glViewController releaseRenderView];
+        glViewController = nil;
+        [glViewController.view removeFromSuperview];
+        
+        glViewController = [[TAGLKViewController sharedManager] init:contentView.bounds image:imageData width:contentView.frame.size.width height:contentView.frame.size.height dataDict:dataDict rotationAngleXZ:rotationAngleXZ rotationAngleY:rotationAngleY];
+        glViewController.tapDelegate = weakSelf;
+        
+        glViewController.view.frame = contentView.bounds;
+        [contentView addSubview:glViewController.view];
+        
     });
 }
 
@@ -231,7 +216,7 @@
     }
     else {
         
-        [MBProgressHUD showHUDAddedTo:self.view animated:NO];
+        [hud show:YES];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
             
@@ -239,7 +224,7 @@
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
-                    [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
+                    [hud hide:YES];
                     
                     [self showImage:responseObject rotationAngleXZ:rotationAngleXZ rotationAngleY:rotationAngleY];
                     selectIndex = pageIndex;
@@ -299,5 +284,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - 沒用到
+/*
+ CGFloat width = tempImage.size.width;
+ CGFloat height = tempImage.size.height;
+ 
+ while (width > 2048) {
+ @autoreleasepool {
+ //                NSLog(@"width = %f, height = %f",width,height);
+ width /= 1.2;
+ height /= 1.2;
+ tempImage = [UIImage imageWithImage:tempImage scaledToSize:CGSizeMake(tempImage.size.width / 1.2, tempImage.size.height / 1.2)];
+ }
+ }
+ */
 
 @end
