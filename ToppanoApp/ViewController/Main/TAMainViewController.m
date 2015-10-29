@@ -60,11 +60,11 @@
                     //寫入
                     if ([responseObject count] > 0) {
                         
-                        NSString *path = [TAFileManager returnSpaceFolderPath:[responseObject[0][@"id"] description]];
+                        NSString *path = [TAFileManager returnSpaceFolderPath:[responseObject[0][UserId] description]];
                         
                         NSMutableDictionary *userMapDict = [NSMutableDictionary dictionaryWithDictionary:responseObject[0]];
                         
-                        [userMapDict writeToFile:[NSString stringWithFormat:@"%@/%@map.plist",path,[responseObject[0][@"id"] description]] atomically:YES];
+                        [userMapDict writeToFile:[NSString stringWithFormat:@"%@/%@map.plist",path,[responseObject[0][UserId] description]] atomically:YES];
                         
                         [self getDataFromFile];
                     }
@@ -124,7 +124,7 @@
     int imageIndex = indexPath.row % 5;
     cell.spaceImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%i.JPG",imageIndex]];
     
-    cell.titleLabel.text = [MapAllDataArray[indexPath.row][@"id"] description];
+    cell.titleLabel.text = [MapAllDataArray[indexPath.row][UserId] description];
     
     return cell;
 }

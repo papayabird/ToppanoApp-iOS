@@ -56,7 +56,7 @@
     
     [self setTitleText:@"SCENE"];
     
-    if ([self checkoutImageisExist:[daraDict[@"panoid"] description]]) {
+    if ([self checkoutImageisExist:[daraDict[PanoId] description]]) {
         
         [self showImage:daraDict rotationAngleXZ:0 rotationAngleY:0];
     }
@@ -65,7 +65,7 @@
 
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
             
-            [self callAPIGetData:[daraDict[@"panoid"] description] mapName:[daraDict[@"id"] description] complete:^(BOOL isSuccess, NSError *err, id responseObject) {
+            [self callAPIGetData:[daraDict[PanoId] description] mapName:[daraDict[MapId] description] complete:^(BOOL isSuccess, NSError *err, id responseObject) {
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
@@ -93,7 +93,7 @@
 - (BOOL)checkoutImageisExist:(NSString *)sceneId
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *path = [TAFileManager returnPhotoFilePathWithFileName:[daraDict[@"id"] description] photoFileName:[sceneId description]];
+    NSString *path = [[TAFileManager returnPhotoFilePathWithFileName:[daraDict[MapId] description] photoFileName:[sceneId description]] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",sceneId]];
     BOOL isDir;
     BOOL isExist =  [fileManager fileExistsAtPath:path isDirectory:&isDir];
 
@@ -102,7 +102,7 @@
 
 - (void)showImage:(NSMutableDictionary *)dataDict rotationAngleXZ:(double)rotationAngleXZ rotationAngleY:(double)rotationAngleY
 {
-    NSString *tempImagePath = [[TAFileManager returnPhotoFilePathWithFileName:[dataDict[@"id"] description] photoFileName:[dataDict[@"panoid"] description]] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg",[dataDict[@"panoid"] description]]];
+    NSString *tempImagePath = [[TAFileManager returnPhotoFilePathWithFileName:[dataDict[MapId] description] photoFileName:[dataDict[PanoId] description]] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg",[dataDict[PanoId] description]]];
     
     __block UIImage *tempImage = [UIImage imageWithContentsOfFile:tempImagePath];
     
@@ -218,7 +218,7 @@
     
     if ([self checkoutImageisExist:[NSString stringWithFormat:@"%@",pageIndex]]) {
         
-        NSString *path = [[TAFileManager returnPhotoFilePathWithFileName:[daraDict[@"id"] description] photoFileName:[pageIndex description]] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",pageIndex]];
+        NSString *path = [[TAFileManager returnPhotoFilePathWithFileName:[daraDict[MapId] description] photoFileName:[pageIndex description]] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",pageIndex]];
         
         NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
         
@@ -235,7 +235,7 @@
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
             
-            [self callAPIGetData:[NSString stringWithFormat:@"%@",pageIndex] mapName:[daraDict[@"id"] description] complete:^(BOOL isSuccess, NSError *err, id responseObject) {
+            [self callAPIGetData:[NSString stringWithFormat:@"%@",pageIndex] mapName:[daraDict[MapId] description] complete:^(BOOL isSuccess, NSError *err, id responseObject) {
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
