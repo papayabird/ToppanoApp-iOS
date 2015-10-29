@@ -56,24 +56,31 @@
     
     [self setTitleText:@"SCENE"];
     
-    [MBProgressHUD showHUDAddedTo:self.view animated:NO];
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+    if ([self checkoutImageisExist:[daraDict[@"panoid"] description]]) {
         
-        [self callAPIGetData:[daraDict[@"panoid"] description] mapName:[daraDict[@"id"] description] complete:^(BOOL isSuccess, NSError *err, id responseObject) {
+        [self showImage:daraDict rotationAngleXZ:0 rotationAngleY:0];
+    }
+    else {
+        [MBProgressHUD showHUDAddedTo:self.view animated:NO];
+
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
             
-            dispatch_async(dispatch_get_main_queue(), ^{
+            [self callAPIGetData:[daraDict[@"panoid"] description] mapName:[daraDict[@"id"] description] complete:^(BOOL isSuccess, NSError *err, id responseObject) {
                 
-                [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
-                
-                [self showImage:daraDict rotationAngleXZ:0 rotationAngleY:0];
-                
-                if ([AppDelegate isPad]) {
-                    [sceneTableView reloadData];
-                }
-            });
-        }];
-    });
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
+                    
+                    [self showImage:daraDict rotationAngleXZ:0 rotationAngleY:0];
+                    
+                    if ([AppDelegate isPad]) {
+                        [sceneTableView reloadData];
+                    }
+                });
+            }];
+        });
+
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -83,11 +90,21 @@
     toolView.frame = CGRectMake(self.view.frame.size.width, 70, toolView.frame.size.width, toolView.frame.size.height);
 }
 
+- (BOOL)checkoutImageisExist:(NSString *)sceneId
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *path = [TAFileManager returnPhotoFilePathWithFileName:[daraDict[@"id"] description] photoFileName:[sceneId description]];
+    BOOL isDir;
+    BOOL isExist =  [fileManager fileExistsAtPath:path isDirectory:&isDir];
+
+    return isExist;
+}
+
 - (void)showImage:(NSMutableDictionary *)dataDict rotationAngleXZ:(double)rotationAngleXZ rotationAngleY:(double)rotationAngleY
 {
     NSString *tempImagePath = [[TAFileManager returnPhotoFilePathWithFileName:[dataDict[@"id"] description] photoFileName:[dataDict[@"panoid"] description]] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg",[dataDict[@"panoid"] description]]];
     
-    __block UIImage *tempImage = [UIImage imageNamed:tempImagePath];
+    __block UIImage *tempImage = [UIImage imageWithContentsOfFile:tempImagePath];
     
     __weak TASceneViewController *weakSelf = self;
     
@@ -97,7 +114,7 @@
         
         CGFloat width = tempImage.size.width;
         CGFloat height = tempImage.size.height;
-        
+        /*
         while (width > 2048) {
             @autoreleasepool {
                 //                NSLog(@"width = %f, height = %f",width,height);
@@ -106,7 +123,7 @@
                 tempImage = [UIImage imageWithImage:tempImage scaledToSize:CGSizeMake(tempImage.size.width / 1.2, tempImage.size.height / 1.2)];
             }
         }
-        
+        */
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [MBProgressHUD hideAllHUDsForView:contentView animated:NO];
@@ -199,25 +216,41 @@
 {
 #warning 這邊還要做轉場動畫
     
-    [MBProgressHUD showHUDAddedTo:self.view animated:NO];
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+    if ([self checkoutImageisExist:[NSString stringWithFormat:@"%@",pageIndex]]) {
         
-        [self callAPIGetData:[NSString stringWithFormat:@"%@",pageIndex] mapName:[daraDict[@"id"] description] complete:^(BOOL isSuccess, NSError *err, id responseObject) {
+        NSString *path = [[TAFileManager returnPhotoFilePathWithFileName:[daraDict[@"id"] description] photoFileName:[pageIndex description]] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",pageIndex]];
+        
+        NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
+        
+        [self showImage:dict rotationAngleXZ:rotationAngleXZ rotationAngleY:rotationAngleY];
+        selectIndex = pageIndex;
+        
+        if ([AppDelegate isPad]) {
+            [sceneTableView reloadData];
+        }
+    }
+    else {
+        
+        [MBProgressHUD showHUDAddedTo:self.view animated:NO];
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
             
-            dispatch_async(dispatch_get_main_queue(), ^{
+            [self callAPIGetData:[NSString stringWithFormat:@"%@",pageIndex] mapName:[daraDict[@"id"] description] complete:^(BOOL isSuccess, NSError *err, id responseObject) {
                 
-                [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
-                
-                [self showImage:responseObject rotationAngleXZ:rotationAngleXZ rotationAngleY:rotationAngleY];
-                selectIndex = pageIndex;
-
-                if ([AppDelegate isPad]) {
-                    [sceneTableView reloadData];
-                }
-            });
-        }];
-    });
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
+                    
+                    [self showImage:responseObject rotationAngleXZ:rotationAngleXZ rotationAngleY:rotationAngleY];
+                    selectIndex = pageIndex;
+                    
+                    if ([AppDelegate isPad]) {
+                        [sceneTableView reloadData];
+                    }
+                });
+            }];
+        });
+    }
 }
 
 #pragma mark - Button Action

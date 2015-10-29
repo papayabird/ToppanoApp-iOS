@@ -32,49 +32,81 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToppanoApp/ViewController/Scene/TASceneViewController.m"
-            timestampString = "467719151.568185"
+            timestampString = "467783351.144786"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
-            landmarkName = "-transfromView:rotationAngleXZ:rotationAngleY:"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "-showImage:rotationAngleXZ:rotationAngleY:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToppanoApp/ViewController/Scene/TASceneViewController.m"
+            timestampString = "467783351.144786"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
             <Locations>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__70-[TASceneViewController transfromView:rotationAngleXZ:rotationAngleY:]_block_invoke_2"
+                  symbolName = "-[TASceneViewController viewDidLoad]"
                   moduleName = "ToppanoApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tsaiyuheng/Documents/TestCase/ToppanoApp/ToppanoApp/ViewController/Scene/TASceneViewController.m"
-                  timestampString = "467720176.674419"
+                  timestampString = "467783523.84659"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "208"
-                  endingLineNumber = "208"
-                  offsetFromSymbolStart = "94">
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "421">
                </Location>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__70-[TASceneViewController transfromView:rotationAngleXZ:rotationAngleY:]_block_invoke_3"
+                  symbolName = "__36-[TASceneViewController viewDidLoad]_block_invoke"
                   moduleName = "ToppanoApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tsaiyuheng/Documents/TestCase/ToppanoApp/ToppanoApp/ViewController/Scene/TASceneViewController.m"
-                  timestampString = "467720176.674811"
+                  timestampString = "467783523.846753"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "208"
-                  endingLineNumber = "208"
-                  offsetFromSymbolStart = "12">
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "26">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToppanoApp/ViewController/main/TAMainViewController.m"
+            timestampString = "467782653.789129"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "-getMainData:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
