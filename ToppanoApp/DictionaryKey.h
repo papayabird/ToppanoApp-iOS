@@ -10,8 +10,11 @@
 #define ToppanoApp_DictionaryKey_h
 
 #define UserId @"id"
-#define MapId @"id"
+#define MapId @"mapid"
+#define BuildName @"name"
+#define EntryPanoId @"entryPanoId"
 #define PanoId @"panoid"
+
 
 
 #endif

@@ -101,7 +101,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
     
-    NSString *url = [NSString stringWithFormat:@"http://helios-api-0.cloudapp.net:6687/maps/photometa?panoid=%@",photoIndex];
+    NSString *url = [NSString stringWithFormat:@"http://helios-api-0.cloudapp.net:6687/photometa?panoid=%@",photoIndex];
     
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         

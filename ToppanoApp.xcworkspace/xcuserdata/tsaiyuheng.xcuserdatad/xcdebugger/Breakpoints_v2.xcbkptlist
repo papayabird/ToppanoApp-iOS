@@ -32,63 +32,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToppanoApp/ViewController/Scene/TASceneViewController.m"
-            timestampString = "467785966.782368"
+            timestampString = "467795094.852108"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[TASceneViewController viewDidLoad]"
-                  moduleName = "ToppanoApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tsaiyuheng/Documents/TestCase/ToppanoApp/ToppanoApp/ViewController/Scene/TASceneViewController.m"
-                  timestampString = "467784197.256552"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "421">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__36-[TASceneViewController viewDidLoad]_block_invoke"
-                  moduleName = "ToppanoApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tsaiyuheng/Documents/TestCase/ToppanoApp/ToppanoApp/ViewController/Scene/TASceneViewController.m"
-                  timestampString = "467784197.256696"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "26">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ToppanoApp/ViewController/Scene/TASceneViewController.m"
-            timestampString = "467785966.782368"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -107,6 +59,150 @@
             endingLineNumber = "80"
             landmarkName = "-getMainData:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__36-[TAMainViewController getMainData:]_block_invoke_3"
+                  moduleName = "ToppanoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tsaiyuheng/Documents/TestCase/ToppanoApp/ToppanoApp/ViewController/main/TAMainViewController.m"
+                  timestampString = "467795095.315819"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "1042">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__36-[TAMainViewController getMainData:]_block_invoke_4"
+                  moduleName = "ToppanoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tsaiyuheng/Documents/TestCase/ToppanoApp/ToppanoApp/ViewController/main/TAMainViewController.m"
+                  timestampString = "467795095.315946"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToppanoApp/ViewController/Scene/TASceneViewController.m"
+            timestampString = "467795094.852108"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__36-[TASceneViewController viewDidLoad]_block_invoke"
+                  moduleName = "ToppanoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tsaiyuheng/Documents/TestCase/ToppanoApp/ToppanoApp/ViewController/Scene/TASceneViewController.m"
+                  timestampString = "467795095.345105"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "33">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__36-[TASceneViewController viewDidLoad]_block_invoke_2"
+                  moduleName = "ToppanoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tsaiyuheng/Documents/TestCase/ToppanoApp/ToppanoApp/ViewController/Scene/TASceneViewController.m"
+                  timestampString = "467795095.345278"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "86">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToppanoApp/ViewController/Scene/TASceneViewController.m"
+            timestampString = "467795094.852108"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToppanoApp/ViewController/Scene/TASceneViewController.m"
+            timestampString = "467795094.852108"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[TASceneViewController viewDidLoad]"
+                  moduleName = "ToppanoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tsaiyuheng/Documents/TestCase/ToppanoApp/ToppanoApp/ViewController/Scene/TASceneViewController.m"
+                  timestampString = "467795095.34666"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "1218">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__36-[TASceneViewController viewDidLoad]_block_invoke"
+                  moduleName = "ToppanoApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tsaiyuheng/Documents/TestCase/ToppanoApp/ToppanoApp/ViewController/Scene/TASceneViewController.m"
+                  timestampString = "467795095.346795"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "26">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

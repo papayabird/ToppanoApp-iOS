@@ -611,13 +611,13 @@ calculVertex TriangleVertice2[] =
         
         if (i == 0) {
             if (ans3 >= 0 && ans3 <= 1 && ans2 >= 0 && ans2 <= 1 && ans1 >= 0 && ans1 <= 1) {
-                NSLog(@"ans1 = %f,ans2 = %f,ans3 = %f",ans1,ans2,ans3);
+//                NSLog(@"ans1 = %f,ans2 = %f,ans3 = %f",ans1,ans2,ans3);
                 return YES;
             }
         }
         else {
             if (ans3 >= 0 && ans3 <= 1 && ans2 >= 0 && ans2 <= 1 && ans1 >= 0 && ans1 <= 1) {
-                NSLog(@"ans1 = %f,ans2 = %f,ans3 = %f",ans1,ans2,ans3);
+//                NSLog(@"ans1 = %f,ans2 = %f,ans3 = %f",ans1,ans2,ans3);
                 return YES;
             }
         }

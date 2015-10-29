@@ -59,9 +59,12 @@
     [self.view addSubview:hud];
     
     
-    if ([self checkoutImageisExist:[daraDict[PanoId] description]]) {
+    if ([self checkoutImageisExist:[daraDict[EntryPanoId] description]]) {
         
-        [self showImage:daraDict rotationAngleXZ:0 rotationAngleY:0];
+        NSString *path = [[TAFileManager returnPhotoFilePathWithFileName:[daraDict[MapId] description] photoFileName:[daraDict[EntryPanoId] description]] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",[daraDict[EntryPanoId] description]]];
+        
+        NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
+        [self showImage:dict rotationAngleXZ:0 rotationAngleY:0];
     }
     else {
         hud.labelText = @"下載圖片中";
@@ -69,13 +72,13 @@
 
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
             
-            [self callAPIGetData:[daraDict[PanoId] description] mapName:[daraDict[MapId] description] complete:^(BOOL isSuccess, NSError *err, id responseObject) {
+            [self callAPIGetData:[daraDict[EntryPanoId] description] mapName:[daraDict[MapId] description] complete:^(BOOL isSuccess, NSError *err, id responseObject) {
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
                     [hud hide:YES];
                     
-                    [self showImage:daraDict rotationAngleXZ:0 rotationAngleY:0];
+                    [self showImage:responseObject rotationAngleXZ:0 rotationAngleY:0];
                     
                     if ([AppDelegate isPad]) {
                         [sceneTableView reloadData];
@@ -215,7 +218,7 @@
         }
     }
     else {
-        
+        hud.labelText = @"下載圖片中";
         [hud show:YES];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
