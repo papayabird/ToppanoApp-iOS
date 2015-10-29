@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 
 #import "TALoginViewController.h"
-#import "TAMainViewController.h"
+#import "TAHomeViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -43,10 +43,10 @@
         //還在登入中
         
         TALoginViewController *loginVC = [[TALoginViewController alloc] init];
-        TAMainViewController *mainVC = [[TAMainViewController alloc] init];
+        TAHomeViewController *homeVC = [[TAHomeViewController alloc] init];
         
         UINavigationController *nav = [[UINavigationController alloc] init];
-        nav.viewControllers = @[loginVC, mainVC];
+        nav.viewControllers = @[loginVC, homeVC];
         nav.navigationBar.hidden = YES;
         [self.window setRootViewController:nav];
     }

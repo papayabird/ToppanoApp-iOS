@@ -107,6 +107,9 @@
 		D0B914E81BD0F2C1001EE612 /* TABasicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0B914E61BD0F2C1001EE612 /* TABasicViewController.xib */; };
 		D0BB45821BE07DBC0098A356 /* TAFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BB45811BE07DBC0098A356 /* TAFileManager.m */; };
 		D0BC9C371BD6181F0035F5CF /* TAFBLoginTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BC9C361BD6181F0035F5CF /* TAFBLoginTest.m */; };
+		D0C59D881BE1C37A008D8D04 /* TAHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C59D871BE1C37A008D8D04 /* TAHomeViewController.m */; };
+		D0C59D8A1BE1C38A008D8D04 /* TAHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0C59D891BE1C38A008D8D04 /* TAHomeViewController.xib */; };
+		D0C59D8B1BE1C4F1008D8D04 /* TAHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C59D871BE1C37A008D8D04 /* TAHomeViewController.m */; };
 		D0D8573F1BD622BC00557E25 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0D857411BD622BC00557E25 /* Localizable.strings */; };
 		D0DF048B1BE09ABA00649D1D /* TAMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0AFEF821BCFB6EB0073D477 /* TAMainViewController.xib */; };
 		D0DF048C1BE09B0E00649D1D /* TAFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BB45811BE07DBC0098A356 /* TAFileManager.m */; };
@@ -232,6 +235,9 @@
 		D0BB45801BE07DBC0098A356 /* TAFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAFileManager.h; sourceTree = "<group>"; };
 		D0BB45811BE07DBC0098A356 /* TAFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAFileManager.m; sourceTree = "<group>"; };
 		D0BC9C361BD6181F0035F5CF /* TAFBLoginTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAFBLoginTest.m; sourceTree = "<group>"; };
+		D0C59D861BE1C37A008D8D04 /* TAHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAHomeViewController.h; sourceTree = "<group>"; };
+		D0C59D871BE1C37A008D8D04 /* TAHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAHomeViewController.m; sourceTree = "<group>"; };
+		D0C59D891BE1C38A008D8D04 /* TAHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAHomeViewController.xib; sourceTree = "<group>"; };
 		D0D857401BD622BC00557E25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D0D857431BD62BE800557E25 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D0ED76061BD788140053962C /* TASphereFragmentObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TASphereFragmentObject.h; sourceTree = "<group>"; };
@@ -446,6 +452,7 @@
 				D0B914E51BD0F2C1001EE612 /* TABasicViewController.m */,
 				D0B914E61BD0F2C1001EE612 /* TABasicViewController.xib */,
 				D0AFEF7B1BCFB6EB0073D477 /* Login */,
+				D0C59D851BE1C360008D8D04 /* Home */,
 				D0AFEF7F1BCFB6EB0073D477 /* Main */,
 				D0AFEF871BCFB7750073D477 /* Scene */,
 			);
@@ -487,6 +494,16 @@
 				D013183A1BD09C2400EF6246 /* TATableViewCell.xib */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		D0C59D851BE1C360008D8D04 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D0C59D861BE1C37A008D8D04 /* TAHomeViewController.h */,
+				D0C59D871BE1C37A008D8D04 /* TAHomeViewController.m */,
+				D0C59D891BE1C38A008D8D04 /* TAHomeViewController.xib */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		EC3AB7F6F4B3B1B2F2DABFD7 /* Pods */ = {
@@ -584,6 +601,7 @@
 			files = (
 				D0B914E11BD0D18F001EE612 /* TAMainCollectionViewCell.xib in Resources */,
 				D0A941111BD8D79D00C1C266 /* 3-7.jpeg in Resources */,
+				D0C59D8A1BE1C38A008D8D04 /* TAHomeViewController.xib in Resources */,
 				D013182C1BD098A700EF6246 /* 0_s.JPG in Resources */,
 				D0A940FF1BD8D79D00C1C266 /* 1-5.jpeg in Resources */,
 				D0A940FC1BD8D79D00C1C266 /* 1-2.jpeg in Resources */,
@@ -699,6 +717,7 @@
 				D0AFEF991BCFBB210073D477 /* TAGLKView.m in Sources */,
 				D0AFEF8B1BCFB79D0073D477 /* TASceneViewController.m in Sources */,
 				D0AFEF0C1BCFB0360073D477 /* AppDelegate.m in Sources */,
+				D0C59D881BE1C37A008D8D04 /* TAHomeViewController.m in Sources */,
 				D0AFEF951BCFBA580073D477 /* TAGLKViewController.m in Sources */,
 				D01189751BDF1FBC00187AE3 /* TATestSphere.m in Sources */,
 				D0AFEF091BCFB0360073D477 /* main.m in Sources */,
@@ -730,6 +749,7 @@
 				D08B4FF91BDF647900B550C8 /* TATestSphere.m in Sources */,
 				D0BC9C371BD6181F0035F5CF /* TAFBLoginTest.m in Sources */,
 				D0AFEF231BCFB0360073D477 /* ToppanoAppTests.m in Sources */,
+				D0C59D8B1BE1C4F1008D8D04 /* TAHomeViewController.m in Sources */,
 				D08E69A31BD7359100BF332B /* TANetworkAPI.m in Sources */,
 				D0DF048C1BE09B0E00649D1D /* TAFileManager.m in Sources */,
 				D08E69A91BD735B500BF332B /* TAMainCollectionViewCell.m in Sources */,

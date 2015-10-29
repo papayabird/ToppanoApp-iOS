@@ -7,7 +7,7 @@
 //
 
 #import "TALoginViewController.h"
-#import "TAMainViewController.h"
+#import "TAHomeViewController.h"
 @interface TALoginViewController ()
 
 {
@@ -72,9 +72,9 @@
              {
                  NSLog(@"resultis:%@",result);
                  
-                 TAMainViewController *mainVC = [[TAMainViewController alloc] init];
-                 mainVC.userDict = result;
-                 [self.navigationController pushViewController:mainVC animated:YES];
+                 TAHomeViewController *homeVC = [[TAHomeViewController alloc] init];
+                 homeVC.userDict = result;
+                 [self.navigationController pushViewController:homeVC animated:YES];
             }
              else
              {

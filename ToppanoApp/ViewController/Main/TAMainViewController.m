@@ -30,7 +30,7 @@
     // Do any additional setup after loading the view from its nib.
     [self setTitleText:@"SPACE LIST"];
     
-    [self loginAndGetData];
+    [self getMainData:[AppDelegate sharedAppDelegate].userId];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,49 +41,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-}
-
-#pragma mark - Login
-- (void)loginAndGetData
-{
-    
-#warning 這邊因為server還沒有紀錄userid所以每次都要call登入,每次跟FB fetch
-    
-    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name, link, first_name, last_name, picture.type(large), email, birthday, bio ,location ,friends ,hometown , friendlists"}]
-     startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-         if (!error)
-         {
-             
-             [MBProgressHUD showHUDAddedTo:self.view animated:NO];
-             
-             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
-                 
-                 [[TANetworkAPI sharedManager] loginWith:result[@"id"] name:result[@"name"] birthday:result[@"birthday"] emails:result[@"email"] bio:result[@"bio"] location:result[@"location"] complete:^(BOOL isSuccess, NSError *err, id responseObject) {
-                     
-                     [MBProgressHUD hideAllHUDsForView:self.view animated:NO];
-                     
-                     dispatch_async(dispatch_get_main_queue(), ^(void) {
-                         
-                         if (isSuccess) {
-                             userIdString = responseObject[@"userid"];
-                             [self getMainData:responseObject[@"userid"]];
-                         }
-                         else {
-                             
-                             NSString *titleString = NSLocalizedString(@"登入失敗", @"String");
-                             NSString *cancelString = NSLocalizedString(@"確認", @"String");
-                             
-                             [RMUniversalAlert showAlertInViewController:self withTitle:titleString message:@"" cancelButtonTitle:cancelString destructiveButtonTitle:nil otherButtonTitles:nil tapBlock:^(RMUniversalAlert *alert, NSInteger buttonIndex){
-                                 
-                                 [self.navigationController popViewControllerAnimated:YES];
-                             }];
-                             NSLog(@"Error %@",err);
-                         }
-                     });
-                 }];
-             });
-         }
-     }];
 }
 
 - (void)getMainData:(NSString *)userId
@@ -131,23 +88,9 @@
 }
 
 #pragma mark - Button Action
-
-- (IBAction)logoutAction:(id)sender
+- (IBAction)backAction:(id)sender
 {
-    NSString *titleString = NSLocalizedString(@"確定要登出?", @"String");
-    NSString *cancelString = NSLocalizedString(@"取消!", @"String");
-    NSString *destructivetring = NSLocalizedString(@"確定!", @"String");
-
-    [RMUniversalAlert showAlertInViewController:self withTitle:titleString message:@"" cancelButtonTitle:cancelString destructiveButtonTitle:destructivetring otherButtonTitles:nil tapBlock:^(RMUniversalAlert *alert, NSInteger buttonIndex){
-        if (buttonIndex == alert.cancelButtonIndex) {
-            NSLog(@"Cancel Tapped");
-        } else if (buttonIndex == alert.destructiveButtonIndex) {
-            NSLog(@"Delete Tapped");
-            FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-            [login logOut];
-            [self.navigationController popViewControllerAnimated:YES];
-        }
-    }];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)reloadAction:(id)sender
