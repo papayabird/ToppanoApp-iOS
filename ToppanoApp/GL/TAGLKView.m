@@ -476,7 +476,7 @@ calculVertex TriangleVertice2[] =
         NSArray *titleArray = [NSArray arrayWithObjects:@"左下",@"右下",@"左上,",@"左上,",@"右下",@"右上", nil];
         for (int i = 0 ; i < 6; i++) {
             GLKVector4 ver = TriangleVertice2[i].positionCoords;
-            NSLog(@"轉換後位置:%@(%f, %f) z = %f",titleArray[i],ver.x,ver.y,ver.z);
+//            NSLog(@"轉換後位置:%@(%f, %f) z = %f",titleArray[i],ver.x,ver.y,ver.z);
             /*
              if (ver.x < 0 || ver.y < 0) {
              DxLog(@"計算座標錯誤！x = %f, y = %f",ver.x,ver.y);
@@ -502,7 +502,7 @@ calculVertex TriangleVertice2[] =
         //只有一個的話那就直接跳轉
         square.textureInfo = mTextureInfo3;
         
-        double delayInSeconds = 0.03f;
+        double delayInSeconds = 0.02f;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             
