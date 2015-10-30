@@ -68,7 +68,7 @@
                   moduleName = "ToppanoApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tsaiyuheng/Documents/TestCase/ToppanoApp/ToppanoApp/ViewController/main/TAMainViewController.m"
-                  timestampString = "467864814.82497"
+                  timestampString = "467867898.634012"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "81"
@@ -83,7 +83,7 @@
                   moduleName = "ToppanoApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tsaiyuheng/Documents/TestCase/ToppanoApp/ToppanoApp/ViewController/main/TAMainViewController.m"
-                  timestampString = "467864814.825272"
+                  timestampString = "467867898.634386"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "81"
@@ -180,7 +180,7 @@
                   moduleName = "ToppanoApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tsaiyuheng/Documents/TestCase/ToppanoApp/ToppanoApp/GL/TAGLKViewController.m"
-                  timestampString = "467864814.826365"
+                  timestampString = "467867898.635592"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
@@ -195,7 +195,7 @@
                   moduleName = "ToppanoApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tsaiyuheng/Documents/TestCase/ToppanoApp/ToppanoApp/GL/TAGLKViewController.m"
-                  timestampString = "467864814.826663"
+                  timestampString = "467867898.635906"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
@@ -208,39 +208,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ToppanoApp/GL/TAGLKViewController.m"
-            timestampString = "467808597.962077"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "-init:image:width:height:dataDict:rotationAngleXZ:rotationAngleY:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ToppanoApp/ViewController/Scene/TASceneViewController.m"
-            timestampString = "467816260.899901"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "-checkoutImageisExist:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToppanoApp/TAFileManager.m"
@@ -256,7 +224,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToppanoApp/TAFileManager.m"
@@ -272,7 +240,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToppanoApp/TAFileManager.m"
@@ -282,6 +250,70 @@
             startingLineNumber = "68"
             endingLineNumber = "68"
             landmarkName = "+getAllMapNameFromMapFile"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToppanoApp/TANetworkAPI.m"
+            timestampString = "467865238.212973"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "-imageByCombiningImage:mapName:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToppanoApp/TANetworkAPI.m"
+            timestampString = "467865239.803116"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
+            landmarkName = "-imageByCombiningImage:mapName:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToppanoApp/ViewController/main/TAMainViewController.m"
+            timestampString = "467867663.501527"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "-getMainData:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToppanoApp/GL/TAGLKViewController.m"
+            timestampString = "467867819.341824"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "-init:image:width:height:dataDict:rotationAngleXZ:rotationAngleY:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

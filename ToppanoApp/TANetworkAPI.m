@@ -170,22 +170,26 @@
         
         for (int j = 0; j < 8; j++) {
             
-            UIImage *firstImage = [UIImage imageWithContentsOfFile:[[TAFileManager returnPhotoFilePathWithFileName:mapName photoFileName:index] stringByAppendingPathComponent:[NSString stringWithFormat:@"/%i.jpg",imageNumber]]];
-            
-            CGSize newImageSize = CGSizeMake(3584, 1792);
-            
-            UIGraphicsBeginImageContext(newImageSize);
-            
-            [firstImage drawAtPoint:CGPointMake(j * 448,i * 448)];
-            
-            [originalImage drawAtPoint:CGPointMake(0,0)];
-            
-            image = UIGraphicsGetImageFromCurrentImageContext();
-            UIGraphicsEndImageContext();
-            
-            originalImage = image;
-            
-            imageNumber++;
+            @autoreleasepool {
+                
+                UIImage *firstImage = [UIImage imageWithContentsOfFile:[path stringByAppendingPathComponent:[NSString stringWithFormat:@"/%i.jpg",imageNumber]]];
+                
+                CGSize newImageSize = CGSizeMake(3584, 1792);
+                
+                UIGraphicsBeginImageContext(newImageSize);
+                
+                [firstImage drawAtPoint:CGPointMake(j * 448,i * 448)];
+                
+                [originalImage drawAtPoint:CGPointMake(0,0)];
+                
+                image = UIGraphicsGetImageFromCurrentImageContext();
+                UIGraphicsEndImageContext();
+                
+                originalImage = image;
+                
+                imageNumber++;
+
+            }
         }
     }
     
