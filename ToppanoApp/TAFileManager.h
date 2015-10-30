@@ -10,6 +10,8 @@
 
 @interface TAFileManager : NSObject
 
++ (NSString *)returnDocumentPath;
+
 + (NSString *)returnSpaceFolderPath:(NSString *)floderName;
 
 + (NSString *)returnPhotoFilePathWithFileName:(NSString *)floderName photoFileName:(NSString *)photoFileName;

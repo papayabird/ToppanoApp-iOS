@@ -27,6 +27,7 @@
 {
     MBProgressHUD *hud;
     TAGLKViewController *glViewController;
+    TAGLKViewController *glViewControllerOld;
     NSMutableArray *dataArray;
     NSMutableDictionary *daraDict;
     __weak IBOutlet UIView *contentView;
@@ -119,16 +120,62 @@
         
         NSMutableData *imageData = [NSMutableData dataWithData:UIImageJPEGRepresentation(tempImage, 2)];
         
-        [glViewController releaseRenderView];
-        glViewController = nil;
-        [glViewController.view removeFromSuperview];
         
-        glViewController = [[TAGLKViewController sharedManager] init:contentView.bounds image:imageData width:contentView.frame.size.width height:contentView.frame.size.height dataDict:dataDict rotationAngleXZ:rotationAngleXZ rotationAngleY:rotationAngleY];
+        [glViewController releaseRenderView];
+        [glViewController.view removeFromSuperview];
+        [glViewController removeFromParentViewController];
+        glViewController = nil;
+        
+        glViewController = [[TAGLKViewController alloc] init:contentView.bounds image:imageData width:contentView.frame.size.width height:contentView.frame.size.height dataDict:dataDict rotationAngleXZ:rotationAngleXZ rotationAngleY:rotationAngleY];
         glViewController.tapDelegate = weakSelf;
         
         glViewController.view.frame = contentView.bounds;
         [contentView addSubview:glViewController.view];
+
         
+        /*
+        if (glViewControllerOld) {
+            
+            glViewController = [[TAGLKViewController alloc] init:contentView.bounds image:imageData width:contentView.frame.size.width height:contentView.frame.size.height dataDict:dataDict rotationAngleXZ:rotationAngleXZ rotationAngleY:rotationAngleY];
+            glViewController.tapDelegate = weakSelf;
+            
+            glViewController.view.frame = contentView.bounds;
+            [contentView addSubview:glViewController.view];
+            glViewController.view.alpha = 0.0f;
+            
+            [UIView  animateWithDuration:0.5f animations:^{
+                
+                glViewController.view.alpha = 1.0f;
+                glViewControllerOld.view.alpha = 0.0f;
+            } completion:^(BOOL finished) {
+                
+                [glViewControllerOld releaseRenderView];
+                [glViewControllerOld.view removeFromSuperview];
+                [glViewControllerOld removeFromParentViewController];
+                glViewControllerOld = nil;
+            }];
+        }
+        else {
+            glViewControllerOld = [[TAGLKViewController alloc] init:contentView.bounds image:imageData width:contentView.frame.size.width height:contentView.frame.size.height dataDict:dataDict rotationAngleXZ:rotationAngleXZ rotationAngleY:rotationAngleY];
+            glViewControllerOld.tapDelegate = weakSelf;
+            
+            glViewControllerOld.view.frame = contentView.bounds;
+            [contentView addSubview:glViewControllerOld.view];
+            glViewControllerOld.view.alpha = 0.0f;
+
+            [UIView  animateWithDuration:0.5f animations:^{
+                
+                glViewControllerOld.view.alpha = 1.0f;
+                glViewController.view.alpha = 0.0f;
+            } completion:^(BOOL finished) {
+                
+                [glViewController releaseRenderView];
+                [glViewController.view removeFromSuperview];
+                [glViewController removeFromParentViewController];
+                glViewController = nil;
+            }];
+        }
+       */
     });
 }
 

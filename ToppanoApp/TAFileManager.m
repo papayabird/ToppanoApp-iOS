@@ -10,9 +10,14 @@
 
 @implementation TAFileManager
 
++ (NSString *)returnDocumentPath
+{
+    return [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+}
+
 + (NSString *)returnSpaceFolderPath:(NSString *)floderName
 {
-    NSString *Path = [[NSHomeDirectory() stringByAppendingPathComponent:kTAMapDir] stringByAppendingPathComponent:floderName];
+    NSString *Path = [[[TAFileManager returnDocumentPath] stringByAppendingPathComponent:kTAMapDir] stringByAppendingPathComponent:floderName];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
@@ -57,8 +62,8 @@
 {
     //取得資料夾中所有檔名
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSDirectoryEnumerator* dirEnum = [fileManager enumeratorAtPath:[NSHomeDirectory() stringByAppendingPathComponent:kTAMapDir]];
-    NSLog(@"Documentsdirectory: %@",[fileManager contentsOfDirectoryAtPath:[NSHomeDirectory() stringByAppendingPathComponent:kTAMapDir] error:nil]); //印出path中的資料夾
+    NSDirectoryEnumerator* dirEnum = [fileManager enumeratorAtPath:[[TAFileManager returnDocumentPath] stringByAppendingPathComponent:kTAMapDir]];
+    NSLog(@"Documentsdirectory: %@",[fileManager contentsOfDirectoryAtPath:[[TAFileManager returnDocumentPath] stringByAppendingPathComponent:kTAMapDir] error:nil]); //印出path中的資料夾
     NSString* path;
     
     NSMutableArray *spaceDirNameArray = [NSMutableArray array];
@@ -82,7 +87,7 @@
     NSMutableArray *array = [self getAllMapNameFromMapFile];
     for (NSString *fileName in array) {
       
-        NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:[[[NSHomeDirectory() stringByAppendingPathComponent:kTAMapDir] stringByAppendingPathComponent:fileName] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@map.plist",fileName]]];
+        NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:[[[[TAFileManager returnDocumentPath] stringByAppendingPathComponent:kTAMapDir] stringByAppendingPathComponent:fileName] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@map.plist",fileName]]];
         
         [spaceDirDataArray addObject:dict];
     }
