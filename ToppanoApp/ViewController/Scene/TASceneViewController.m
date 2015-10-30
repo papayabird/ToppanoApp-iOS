@@ -60,9 +60,9 @@
     [self.view addSubview:hud];
     
     
-    if ([self checkoutImageisExist:[daraDict[EntryPanoId] description]]) {
+    if ([self checkoutImageisExist:[daraDict[kEntryPanoId] description]]) {
         
-        NSString *path = [[TAFileManager returnPhotoFilePathWithFileName:[daraDict[MapId] description] photoFileName:[daraDict[EntryPanoId] description]] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",[daraDict[EntryPanoId] description]]];
+        NSString *path = [[TAFileManager returnPhotoFilePathWithFileName:[daraDict[kMapId] description] photoFileName:[daraDict[kEntryPanoId] description]] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",[daraDict[kEntryPanoId] description]]];
         
         NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
         [self showImage:dict rotationAngleXZ:0 rotationAngleY:0];
@@ -73,7 +73,7 @@
 
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
             
-            [self callAPIGetData:[daraDict[EntryPanoId] description] mapName:[daraDict[MapId] description] complete:^(BOOL isSuccess, NSError *err, id responseObject) {
+            [self callAPIGetData:[daraDict[kEntryPanoId] description] mapName:[daraDict[kMapId] description] complete:^(BOOL isSuccess, NSError *err, id responseObject) {
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
@@ -101,7 +101,7 @@
 - (BOOL)checkoutImageisExist:(NSString *)sceneId
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *path = [[TAFileManager returnPhotoFilePathWithFileName:[daraDict[MapId] description] photoFileName:[sceneId description]] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",sceneId]];
+    NSString *path = [[TAFileManager returnPhotoFilePathWithFileName:[daraDict[kMapId] description] photoFileName:[sceneId description]] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",sceneId]];
     BOOL isDir;
     BOOL isExist =  [fileManager fileExistsAtPath:path isDirectory:&isDir];
 
@@ -110,7 +110,7 @@
 
 - (void)showImage:(NSMutableDictionary *)dataDict rotationAngleXZ:(double)rotationAngleXZ rotationAngleY:(double)rotationAngleY
 {
-    NSString *tempImagePath = [[TAFileManager returnPhotoFilePathWithFileName:[dataDict[MapId] description] photoFileName:[dataDict[PanoId] description]] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg",[dataDict[PanoId] description]]];
+    NSString *tempImagePath = [[TAFileManager returnPhotoFilePathWithFileName:[dataDict[kMapId] description] photoFileName:[dataDict[kPanoId] description]] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg",[dataDict[kPanoId] description]]];
     
     __block UIImage *tempImage = [UIImage imageWithContentsOfFile:tempImagePath];
     
@@ -119,20 +119,19 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         
         NSMutableData *imageData = [NSMutableData dataWithData:UIImageJPEGRepresentation(tempImage, 2)];
-        
-        
+    
         [glViewController releaseRenderView];
         [glViewController.view removeFromSuperview];
         [glViewController removeFromParentViewController];
         glViewController = nil;
         
-        glViewController = [[TAGLKViewController alloc] init:contentView.bounds image:imageData width:contentView.frame.size.width height:contentView.frame.size.height dataDict:dataDict rotationAngleXZ:rotationAngleXZ rotationAngleY:rotationAngleY];
+        glViewController = [[TAGLKViewController sharedManager] init:contentView.bounds image:imageData width:contentView.frame.size.width height:contentView.frame.size.height dataDict:dataDict rotationAngleXZ:rotationAngleXZ rotationAngleY:rotationAngleY];
         glViewController.tapDelegate = weakSelf;
         
         glViewController.view.frame = contentView.bounds;
         [contentView addSubview:glViewController.view];
 
-        
+#warning 這邊要做轉場動畫
         /*
         if (glViewControllerOld) {
             
@@ -249,11 +248,10 @@
 
 -(void)transfromView:(NSString *)pageIndex rotationAngleXZ:(double)rotationAngleXZ rotationAngleY:(double)rotationAngleY
 {
-#warning 這邊還要做轉場動畫
     
     if ([self checkoutImageisExist:[NSString stringWithFormat:@"%@",pageIndex]]) {
         
-        NSString *path = [[TAFileManager returnPhotoFilePathWithFileName:[daraDict[MapId] description] photoFileName:[pageIndex description]] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",pageIndex]];
+        NSString *path = [[TAFileManager returnPhotoFilePathWithFileName:[daraDict[kMapId] description] photoFileName:[pageIndex description]] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",pageIndex]];
         
         NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
         
@@ -270,7 +268,7 @@
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
             
-            [self callAPIGetData:[NSString stringWithFormat:@"%@",pageIndex] mapName:[daraDict[MapId] description] complete:^(BOOL isSuccess, NSError *err, id responseObject) {
+            [self callAPIGetData:[NSString stringWithFormat:@"%@",pageIndex] mapName:[daraDict[kMapId] description] complete:^(BOOL isSuccess, NSError *err, id responseObject) {
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     

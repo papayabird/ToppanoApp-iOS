@@ -105,6 +105,23 @@
         }
     }];
 }
+- (IBAction)claenDataAction:(id)sender
+{
+    NSString *titleString = NSLocalizedString(@"確定要刪除?", @"String");
+    NSString *cancelString = NSLocalizedString(@"取消!", @"String");
+    NSString *destructivetring = NSLocalizedString(@"確定!", @"String");
+    
+    [RMUniversalAlert showAlertInViewController:self withTitle:titleString message:@"" cancelButtonTitle:cancelString destructiveButtonTitle:destructivetring otherButtonTitles:nil tapBlock:^(RMUniversalAlert *alert, NSInteger buttonIndex){
+        if (buttonIndex == alert.cancelButtonIndex) {
+            NSLog(@"Cancel Tapped");
+        } else if (buttonIndex == alert.destructiveButtonIndex) {
+            NSLog(@"Delete Tapped");
+            NSFileManager *fileManager = [NSFileManager defaultManager];
+            
+            [fileManager removeItemAtPath:[[TAFileManager returnDocumentPath] stringByAppendingPathComponent:kTAMapDir] error:nil];
+        }
+    }];
+}
 
 - (IBAction)myBuildCaseAction:(id)sender
 {

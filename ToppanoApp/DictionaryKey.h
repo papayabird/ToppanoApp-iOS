@@ -9,11 +9,11 @@
 #ifndef ToppanoApp_DictionaryKey_h
 #define ToppanoApp_DictionaryKey_h
 
-#define UserId @"id"
-#define MapId @"mapid"
-#define BuildName @"name"
-#define EntryPanoId @"entryPanoId"
-#define PanoId @"panoid"
+#define kUserId @"id"
+#define kMapId @"mapid"
+#define kBuildName @"name"
+#define kEntryPanoId @"entryPanoId"
+#define kPanoId @"panoid"
 
 
 
