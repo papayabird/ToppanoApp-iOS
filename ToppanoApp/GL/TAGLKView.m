@@ -244,7 +244,7 @@ typedef enum : int {
         GLKTextureInfo *textureInfo = [GLKTextureLoader textureWithCGImage:([[UIImage imageNamed:name] CGImage]) options:nil error:nil];
             
             tt.textureMode = _textureMode;
-            tt.textureInfo = textureInfo;
+            tt.textureInfo = mTextureInfo;
             
             [sceneObjectArray addObject:tt];
         }
