@@ -233,18 +233,43 @@ typedef enum : int {
     cameraFovDegree = CAMERA_FOV_DEGREE_INIT;
 }
 
+- (UIImage *)flipImage:(UIImage *)image
+{
+    CGAffineTransform transform = CGAffineTransformIdentity;
+    transform = CGAffineTransformTranslate(transform, image.size.width, 0);
+    transform = CGAffineTransformScale(transform, -1, 1);
+    
+    CGContextRef ctx = CGBitmapContextCreate(NULL, image.size.width, image.size.height,
+                                             CGImageGetBitsPerComponent(image.CGImage), 0,
+                                             CGImageGetColorSpace(image.CGImage),
+                                             CGImageGetBitmapInfo(image.CGImage));
+    CGContextConcatCTM(ctx, transform);
+    CGContextDrawImage(ctx, CGRectMake(0,0,image.size.height,image.size.width), image.CGImage);
+    
+    CGImageRef cgimg = CGBitmapContextCreateImage(ctx);
+    UIImage *img = [UIImage imageWithCGImage:cgimg];
+    CGContextRelease(ctx);
+    CGImageRelease(cgimg);
+    return img;
+}
 - (void)settingSphereObject
 {
     
     for (int i = 0 ; i < 4 ; i++) {
         for (int j = 0 ; j < 8 ; j++) {
-                TATestSphere *tt = [[TATestSphere alloc] init:90 widthSegments:4 heightSegments:8 phiStart:M_PI / 4 * j phiLength:M_PI / 4 thetaStart:M_PI / 4 * i thetaLength:M_PI / 4];
+            TATestSphere *tt = [[TATestSphere alloc] init:90 widthSegments:10 heightSegments:10 phiStart:M_PI / 4 * j phiLength:M_PI / 4 thetaStart:M_PI / 4 * i thetaLength:M_PI / 4];
             
-        NSString *name = [NSString stringWithFormat:@"%i-%i.jpeg",i,j];
-        GLKTextureInfo *textureInfo = [GLKTextureLoader textureWithCGImage:([[UIImage imageNamed:name] CGImage]) options:nil error:nil];
+            NSString *name = [NSString stringWithFormat:@"%i-%i.jpeg",i,j];
+            UIImage *image = [UIImage imageNamed:name];
+            UIImage *flipImage = [self flipImage:image];
+
+//            NSData *imageData = UIImageJPEGRepresentation(flipImage, 2);
             
+            NSError *error;
+            GLKTextureInfo *textureInfo = [GLKTextureLoader textureWithCGImage:([image CGImage]) options:nil error:&error];
+//            GLKTextureInfo *textureInfo = [GLKTextureLoader textureWithContentsOfData:imageData options:nil error:&error];
             tt.textureMode = _textureMode;
-            tt.textureInfo = mTextureInfo;
+            tt.textureInfo = textureInfo;
             
             [sceneObjectArray addObject:tt];
         }

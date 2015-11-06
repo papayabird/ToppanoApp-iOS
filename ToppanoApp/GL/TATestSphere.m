@@ -16,7 +16,8 @@
     GLfloat *texCoords;
     GLfloat **texCoordsAr;
     
-    int count;
+    int width;
+    int height;
 }
 
 @end
@@ -28,7 +29,8 @@
     self = [super init];
     if (self) {
         
-        count = widthSegments;
+        width = widthSegments;
+        height = heightSegments;
         
         vertexAr = malloc(sizeof(GLfloat*)*(heightSegments * 2));
         texCoordsAr = malloc(sizeof(GLfloat*)*(heightSegments) * 2);
@@ -36,7 +38,7 @@
         for ( int y = 0; y < heightSegments; y ++ ) {
             
             float v = y / heightSegments;
-            int v2 = y + 1 / heightSegments;
+            float v2 = (y + 1) / heightSegments;
 
             vertices = malloc(sizeof(GLfloat)*((widthSegments * 18 + 18)));
             texCoords = malloc(sizeof(GLfloat)*(widthSegments * 12 + 12));
@@ -44,7 +46,7 @@
             for ( int x = 0; x < widthSegments; x ++ ) {
                 
                 float u = x / widthSegments;
-                float u2 = x + 1 / widthSegments;
+                float u2 = (x + 1) / widthSegments;
 
                 //原本
                 float px0 = - radius * cos( phiStart + u * phiLength ) * sin( thetaStart + v * thetaLength );
@@ -63,49 +65,62 @@
                 float py10 = radius * cos( thetaStart + v2 * thetaLength );
                 float pz11 = radius * sin( phiStart + u2 * phiLength ) * sin( thetaStart + v2 * thetaLength );
                 
-                //原本
-                vertices[x * 3 + 0] = px0;
-                vertices[x * 3 + 1] = py1;
-                vertices[x * 3 + 2] = pz2;
-                
-                vertices[x * 3 + 3] = px3;
-                vertices[x * 3 + 4] = py4;
-                vertices[x * 3 + 5] = pz5;
-                
-                vertices[x * 3 + 6] = px6;
-                vertices[x * 3 + 7] = py7;
-                vertices[x * 3 + 8] = pz8;
-                
-                vertices[x * 3 + 9] = px6;
-                vertices[x * 3 + 10] = py7;
-                vertices[x * 3 + 11] = pz8;
-                
-                vertices[x * 3 + 12] = px3;
-                vertices[x * 3 + 13] = py4;
-                vertices[x * 3 + 14] = pz5;
-                
-                vertices[x * 3 + 15] = px9;
-                vertices[x * 3 + 16] = py10;
-                vertices[x * 3 + 17] = pz11;
+//                NSLog(@"px0 = %f",px0);
+//                NSLog(@"px0 = %f",py1);
+//                NSLog(@"px0 = %f",pz2);
+//                NSLog(@"px0 = %f",px3);
+//                NSLog(@"px0 = %f",py4);
+//                NSLog(@"px0 = %f",pz5);
+//                NSLog(@"px0 = %f",px6);
+//                NSLog(@"px0 = %f",py7);
+//                NSLog(@"px0 = %f",pz8);
+//                NSLog(@"px0 = %f",px9);
+//                NSLog(@"px0 = %f",py10);
+//                NSLog(@"px0 = %f",pz11);
                 
                 //原本
-                texCoords[x * 2 + 0] = u;
-                texCoords[x * 2 + 1] = 1 - v;
+                vertices[x * 18 + 0] = px0;
+                vertices[x * 18 + 1] = py1;
+                vertices[x * 18 + 2] = pz2;
                 
-                texCoords[x * 2 + 2] = u2;
-                texCoords[x * 2 + 3] = 1 - v;
+                vertices[x * 18 + 3] = px3;
+                vertices[x * 18 + 4] = py4;
+                vertices[x * 18 + 5] = pz5;
                 
-                texCoords[x * 2 + 4] = u;
-                texCoords[x * 2 + 5] = 1 - v2;
+                vertices[x * 18 + 6] = px6;
+                vertices[x * 18 + 7] = py7;
+                vertices[x * 18 + 8] = pz8;
                 
-                texCoords[x * 2 + 6] = u;
-                texCoords[x * 2 + 7] = 1 - v2;
+                vertices[x * 18 + 9] = px6;
+                vertices[x * 18 + 10] = py7;
+                vertices[x * 18 + 11] = pz8;
                 
-                texCoords[x * 2 + 8] = u2;
-                texCoords[x * 2 + 9] = 1 - v;
+                vertices[x * 18 + 12] = px3;
+                vertices[x * 18 + 13] = py4;
+                vertices[x * 18 + 14] = pz5;
                 
-                texCoords[x * 2 + 10] = u2;
-                texCoords[x * 2 + 11] = 1 - v2;
+                vertices[x * 18 + 15] = px9;
+                vertices[x * 18 + 16] = py10;
+                vertices[x * 18 + 17] = pz11;
+                
+                //原本
+                texCoords[x * 12 + 0] = u;
+                texCoords[x * 12 + 1] = v;
+                
+                texCoords[x * 12 + 2] = u2;
+                texCoords[x * 12 + 3] = v;
+                
+                texCoords[x * 12 + 4] = u;
+                texCoords[x * 12 + 5] = v2;
+                
+                texCoords[x * 12 + 6] = u;
+                texCoords[x * 12 + 7] = v2;
+                
+                texCoords[x * 12 + 8] = u2;
+                texCoords[x * 12 + 9] = v;
+                
+                texCoords[x * 12 + 10] = u2;
+                texCoords[x * 12 + 11] = v2;
             }
             
             vertexAr[y] = vertices;
@@ -128,7 +143,8 @@
     
     GLfloat *vertice;
     GLfloat *texCoord;
-    for (int i = 0; i < count; i++) {
+    
+    for (int i = 0; i < height; i++) {
         vertice = vertexAr[i];
         texCoord = texCoordsAr[i];
         
@@ -137,7 +153,7 @@
         //把貼圖座標餵給aUV
         glVertexAttribPointer(uvLocation, 2, GL_FLOAT, false, 0, texCoord);
         
-        glDrawArrays(GL_TRIANGLES, 0, 18);
+        glDrawArrays(GL_TRIANGLES, 0, width * 6);
     }
 }
 
