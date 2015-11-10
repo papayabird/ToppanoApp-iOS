@@ -10,6 +10,8 @@
 #import <GLKit/GLKit.h>
 @interface TASphereFragmentObject : NSObject
 
+@property (nonatomic) int textureTag;
+
 @property (nonatomic) int textureMode;
 
 @property (strong, nonatomic) GLKTextureInfo *textureInfo;

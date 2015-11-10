@@ -170,8 +170,6 @@ typedef enum : int {
             
             glEnable(GL_DEPTH_TEST);
             glDepthFunc(GL_LESS);
-            
-            shell = [[TASphereObject alloc] init:SHELL_RADIUS divide:SHELL_DIVIDE];
         }
         
         DxLog(@"initwithframe frame: x: %f y: %f width %f height %f", frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
@@ -232,7 +230,7 @@ typedef enum : int {
     
     cameraFovDegree = CAMERA_FOV_DEGREE_INIT;
 }
-
+//鏡面反轉
 - (UIImage *)flipImage:(UIImage *)image
 {
     CGAffineTransform transform = CGAffineTransformIdentity;
@@ -254,50 +252,29 @@ typedef enum : int {
 }
 - (void)settingSphereObject
 {
-    
+ 
+#if 1
     for (int i = 0 ; i < 4 ; i++) {
         for (int j = 0 ; j < 8 ; j++) {
-            TATestSphere *tt = [[TATestSphere alloc] init:90 widthSegments:10 heightSegments:10 phiStart:M_PI / 4 * j phiLength:M_PI / 4 thetaStart:M_PI / 4 * i thetaLength:M_PI / 4];
             
-            NSString *name = [NSString stringWithFormat:@"%i-%i.jpeg",i,j];
-            UIImage *image = [UIImage imageNamed:name];
-            UIImage *flipImage = [self flipImage:image];
-
-//            NSData *imageData = UIImageJPEGRepresentation(flipImage, 2);
+            TASphereFragmentObject *tt = [[TASphereFragmentObject alloc] init:90 widthSegments:10 heightSegments:10 phiStart:M_PI / 4 * j phiLength:M_PI / 4 thetaStart:M_PI / 4 * i thetaLength:M_PI / 4];
             
             NSError *error;
+
+            NSString *name = [NSString stringWithFormat:@"%i-%i.jpeg",i,j];
+            NSLog(@"%@",name);
+            UIImage *image = [UIImage imageNamed:name];
+
             GLKTextureInfo *textureInfo = [GLKTextureLoader textureWithCGImage:([image CGImage]) options:nil error:&error];
-//            GLKTextureInfo *textureInfo = [GLKTextureLoader textureWithContentsOfData:imageData options:nil error:&error];
-            tt.textureMode = _textureMode;
-            tt.textureInfo = textureInfo;
             
+            tt.textureMode = 0;
+            tt.textureInfo = textureInfo;
+            tt.textureTag = (i*8) + j;
             [sceneObjectArray addObject:tt];
         }
     }
-    
+#endif
 
-    /*
-    for (int i = 0 ; i < 4 ; i++) {
-        for (int j = 0 ; j < 8 ; j++) {
-            
-            TASphereFragmentObject *spfragmentObj = [[TASphereFragmentObject alloc] init:90
-                                                                           widthSegments:4
-                                                                          heightSegments:8
-                                                                                phiStart:M_PI / 4 * j
-                                                                               phiLength:M_PI / 4
-                                                                              thetaStart:M_PI / 4 * i
-                                                                             thetaLength:M_PI / 4];
-            
-//            NSString *name = [NSString stringWithFormat:@"%i-%i.jpeg",i,j];
-//            GLKTextureInfo *textureInfo = [GLKTextureLoader textureWithCGImage:([[UIImage imageNamed:name] CGImage]) options:nil error:nil];
-            
-            spfragmentObj.textureMode = _textureMode;
-            spfragmentObj.textureInfo = mTextureInfo;
-            
-            [sceneObjectArray addObject:spfragmentObj];
-        }
-    }
-*/
 }
 
 - (void)settingSquareObject
@@ -408,28 +385,11 @@ typedef enum : int {
     [self draw];
 }
 
-- (void)drawSphere
-{
-    //畫球體
-    //uTex = 所用素材
-    shell.textureMode = 0;
-    shell.textureInfo = mTextureInfo;
-    [shell draw:aPosition uv:aUV textureModeSlot:_textureModeSlot tex:uTex];
-}
-
 - (void)drawSphereFragment
 {
-    
-    for (TATestSphere *sphereFrag in sceneObjectArray) {
-        [sphereFrag draw:aPosition uv:aUV textureModeSlot:_textureModeSlot tex:uTex];
-    }
-    
-    /*
     for (TASphereFragmentObject *sphereFrag in sceneObjectArray) {
-        
         [sphereFrag draw:aPosition uv:aUV textureModeSlot:_textureModeSlot tex:uTex];
     }
-     */
 }
 
 - (void)drawSquare
@@ -587,7 +547,7 @@ calculVertex TriangleVertice2[] =
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             
             square.textureInfo = mTextureInfo2;
-            DxLog(@"square.transformPageIndex = %i",square.transformPageIndex);
+            DxLog(@"square.transformPageIndex = %@",square.transformPageIndex);
             
             //換場景
             TAGLKViewController *glVC = (TAGLKViewController *)self.myViewController;

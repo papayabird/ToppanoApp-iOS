@@ -36,13 +36,6 @@
     [self.view addSubview:hud];
 
     [self getMainData:[AppDelegate sharedAppDelegate].userId];
-    
-    
-    for (int i = 0 ; i < 4 ; i++) {
-        for (int j = 0 ; j < 8 ; j++) {
-            TATestSphere *tt = [[TATestSphere alloc] init:90 widthSegments:4 heightSegments:8 phiStart:M_PI / 4 * j phiLength:M_PI / 4 thetaStart:M_PI / 4 * i thetaLength:M_PI / 4];
-        }
-    }
 }
 
 - (void)didReceiveMemoryWarning {

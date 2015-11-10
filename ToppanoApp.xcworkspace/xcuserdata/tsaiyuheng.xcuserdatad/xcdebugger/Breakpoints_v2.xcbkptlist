@@ -244,7 +244,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToppanoApp/ViewController/main/TAMainViewController.m"
-            timestampString = "468384135.256951"
+            timestampString = "468729919.288028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
@@ -281,7 +281,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
             endingLineNumber = "99"
-            landmarkName = "-loginAndGetData"
+            landmarkName = "-logoutAction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -307,12 +307,44 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ToppanoApp/GL/TATestSphere.m"
-            timestampString = "468484124.020531"
+            filePath = "ToppanoApp/ViewController/Home/TAHomeViewController.m"
+            timestampString = "468494973.682562"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "-logoutAction:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToppanoApp/GL/TAGLKView.m"
+            timestampString = "468839143.377435"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
+            landmarkName = "-settingSphereObject"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToppanoApp/GL/TATestSphere.m"
+            timestampString = "468838009.786357"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "-init:widthSegments:heightSegments:phiStart:phiLength:thetaStart:thetaLength:"
             landmarkType = "5">
          </BreakpointContent>
@@ -323,13 +355,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ToppanoApp/ViewController/Home/TAHomeViewController.m"
-            timestampString = "468494973.682562"
+            filePath = "ToppanoApp/GL/TATestSphere.m"
+            timestampString = "468838009.786357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "-loginAndGetData"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "-init:widthSegments:heightSegments:phiStart:phiLength:thetaStart:thetaLength:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -339,29 +371,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ToppanoApp/GL/TAGLKView.m"
-            timestampString = "468495136.491133"
+            filePath = "ToppanoApp/GL/TATestSphere.m"
+            timestampString = "468838009.786357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
-            landmarkName = "-settingSphereObject"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ToppanoApp/GL/TAGLKView.m"
-            timestampString = "468495207.084084"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
-            landmarkName = "-settingSphereObject"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "-init:widthSegments:heightSegments:phiStart:phiLength:thetaStart:thetaLength:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -371,13 +387,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ToppanoApp/GL/TAGLKView.m"
-            timestampString = "468495270.655328"
+            filePath = "ToppanoApp/GL/TATestSphere.m"
+            timestampString = "468839193.401168"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "272"
-            endingLineNumber = "272"
-            landmarkName = "-settingSphereObject"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "-init:widthSegments:heightSegments:phiStart:phiLength:thetaStart:thetaLength:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

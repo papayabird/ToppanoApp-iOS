@@ -168,7 +168,7 @@ MapVertex mapVertices[] =
     //把貼圖座標餵給aUV
     glVertexAttribPointer(uvLocation, 2, GL_FLOAT, false, 0, mapVertices);
     //畫
-    glDrawArrays(GL_TRIANGLE_STRIP, 0,6);
+    glDrawArrays(GL_TRIANGLES, 0,6);
 }
 
 - (NSMutableArray *)getObjectvectorArray
